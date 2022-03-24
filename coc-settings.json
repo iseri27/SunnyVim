@@ -1,0 +1,117 @@
+{
+	"suggest.noselect": true,
+    "suggest.detailMaxLength": 30,
+    "suggest.defaultSortMethod": "length",
+    "suggest.floatEnable": true,
+    "suggest.labelMaxLength": 50,
+    "suggest.enablePreselect": false,
+    "suggest.detailField": "preview",
+
+
+    "codeLens.enable": true,
+
+    "coc.preferences.extensionUpdateCheck": "never",
+    "coc.preferences.messageLevel": "warning",
+    "coc.preferences.snippetStatusText": "Ⓢ ",
+
+    "coc.source.vimtex.filetypes": [
+        "latex"
+    ],
+
+    "suggest.completionItemKindLabels": {
+        "class": "",
+        "color": "",
+        "constant": "",
+        "default": "",
+        "enum": "",
+        "enumMember": "",
+        "event": "鬒",
+        "field": "綠",
+        "file": "",
+        "folder": "",
+        "function": "",
+        "interface": "",
+        "keyword": "",
+        "method": "",
+        "module": "",
+        "operator": "洛",
+        "property": "",
+        "reference": "渚",
+        "snippet": "Ⓢ",
+        "struct": "פּ",
+        "text": "",
+        "typeParameter": "",
+        "unit": "",
+        "value": "",
+        "variable": ""
+    },
+
+    "snippets.ultisnips.directories": [
+        "UltiSnips"
+    ],
+
+    "diagnostic.errorSign": "",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic.hintSign": "",
+
+    "diagnostic.displayByAle": false,
+    "diagnostic.refreshOnInsertMode": false,
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualTextPrefix": " ❯❯❯ ",
+    "diagnostic.virtualText": false,
+
+    "translator.proxy": "socks://127.0.0.1:7891",
+    "translator.engines": [
+        "youdao"
+    ],
+    "translator.enableHover": true,
+    "translator.window.enableBorder": true,
+	"translator.window.maxHeight": 50,
+
+    "sumneko-lua.enableNvimLuaDev": true,
+    "Lua.telemetry.enable": true,
+
+    "explorer.position": "floating",
+    "explorer.floating.position": "left-center",
+	"explorer.floating.width": -30,
+    "explorer.root.strategies": [
+        "workspace",
+        "cwd",
+        "sourceBuffer",
+        "reveal"
+    ],
+    "explorer.file.hiddenRules": {
+        "extensions": [
+            "o", "a", "exe", "run", "out", "obj",
+			"aux", "fls", "log", "fdb_latexmk", "toc", "log", "lof", "xdv",
+			"zip", "rar", "gz", "tar", "7z",
+			"pdf", "doc", "docx", "ppt", "pptx", "xls", "xlsx",
+			"png", "jpg", "jpeg", "webp", "bmp", "jfif",
+			"mkv", "mp4", "mov", "mp3", "m4a", "flac", "wav",
+            "pyc",
+			"class", "jar", "war"
+        ],
+        "filenames": [
+			"__pycache__",
+			"WPS Cloud Files"
+		],
+        "patternMatches": [
+            "^\\.",
+			"\\.synctex\\.gz$"
+        ]
+    },
+    "explorer.focus": true,
+    "explorer.quitOnOpen": true,
+	"explorer.keyMappings.global": {
+		"a": "addFile",
+		"n": "addFile",
+		"N": "addFile",
+		"A": "addDirectory",
+		"r": "rename",
+		"R": "refresh",
+		"?": "help",
+		"<BS>": ["wait", "gotoParent"],
+		".": "toggleHidden"
+	}
+}
