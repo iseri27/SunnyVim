@@ -19,6 +19,10 @@ function! color#add(repo, colorscheme) abort
 endfunction
 
 function! color#set(colorscheme, bg) abort
+	if exists('g:random_colorscheme_enable')
+		return
+	endif
+
 	if index(g:colorscheme_list, a:colorscheme) < 0
 		echoerr "Colorscheme " .. a:colorscheme .. " Uninstalled"
 		return
@@ -32,12 +36,24 @@ function! color#set(colorscheme, bg) abort
 	execute 'colorscheme ' .. a:colorscheme
 	let &background = a:bg
 	let g:lightline.colorscheme = a:colorscheme
+
+	let g:random_colorscheme_enable = v:false
 endfunction
 
 function! color#Random() abort
+	if exists('g:random_colorscheme_enable')
+		if g:random_colorscheme_enable == v:false
+			return
+		endif
+	endif
+
 	let l:len = len(g:colorscheme_list)
 	let l:n = utils#RandNumber() % l:len
 	let l:c = g:colorscheme_list[l:n]
-	echomsg "Random Colorscheme: " .. l:c
-	call color#set(l:c, 'dark')
+
+	let &background = 'dark'
+	let g:lightline.colorscheme = l:c
+	execute 'colorscheme' .. ' ' .. l:c 
+
+	let g:random_colorscheme_enable = v:true
 endfunction
