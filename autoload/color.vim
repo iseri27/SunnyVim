@@ -33,3 +33,11 @@ function! color#set(colorscheme, bg) abort
 	let &background = a:bg
 	let g:lightline.colorscheme = a:colorscheme
 endfunction
+
+function! color#Random() abort
+	let l:len = len(g:colorscheme_list)
+	let l:n = utils#RandNumber() % l:len
+	let l:c = g:colorscheme_list[l:n]
+	echomsg "Random Colorscheme: " .. l:c
+	call color#set(l:c, 'dark')
+endfunction

@@ -7,10 +7,12 @@
 "                                        |___/                       
 " =============================================================================
 
+" Get file path {{{
 function! utils#GetPath() abort
 	let l:config_dir = fnamemodify(expand('<sfile>'), ':h')
 	return l:config_dir
 endfunction
+" }}}
 
 " Load Files {{{
 " path: absolute path, all *.vim files in path and its subdirs will be loaded.
@@ -304,14 +306,11 @@ function! s:get_all_dirs(path) abort
 endfunction
 " }}}
 
-
-function! utils#QuitNVim() abort
-	let l:bt=&buftype
-	if l:bt == "" || l:bt == "nofile" || l:bt == "quickfix"
-		quitall!
-	else
-		wq
-	endif
+" Get Random Number{{{
+function! utils#RandNumber() abort
+	let l:n = str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+	" let l:n = str2nr(system("bash -c 'echo $RANDOM'"))
+	return l:n
 endfunction
-
+"}}}
 " vim:nowrap
