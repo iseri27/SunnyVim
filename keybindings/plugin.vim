@@ -13,7 +13,7 @@ call utils#AddKeyGroup([g:leader_key_plugin], '*Plugin')
 "SECTION: dein
 call utils#AddKeyGroup([g:leader_key_plugin, 'd'], '*Dein')
 call utils#AddKey(['nnore'], [g:leader_key_plugin, 'd', 'i'], ':call dein#install() <CR>', 'Install')
-call utils#AddKey(['nnore'], [g:leader_key_plugin, 'd', 'u'], 'Dein <CR>', 'Update Plugins')
+call utils#AddKey(['nnore'], [g:leader_key_plugin, 'd', 'u'], ':Dein <CR>', 'Update Plugins')
 
 call utils#AddKeyGroup([g:leader_key_plugin, 'd', 'd'], '*Uninstall')
 call utils#AddKey(['nnore'], [g:leader_key_plugin, 'd', 'd', 'r'], ':call dein#recache_runtimepath()<CR>', 'Recache')
