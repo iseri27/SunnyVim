@@ -31,7 +31,6 @@ let g:coc_global_extensions = [
 	\    'coc-snippets',
 	\    'coc-translator',
 	\    'coc-vimtex',
-	\    'coc-clangd',
 	\    'coc-tsserver',
 	\    'coc-python',
 	\    'coc-vimlsp',
