@@ -30,10 +30,10 @@ let g:lightline.component_expand = {
 let g:lightline.component_type = {
 			\ 'buffers' : 'tabsel'
 			\ }
-let g:lightline.separator = { 'left': "\ue0b0", 'right': "\ue0b2" }
-let g:lightline.subseparator = { 'left': "\ue0b1", 'right': "\ue0b3" }
-let g:lightline.tabline_separator = { 'left': "\ue0b0", 'right': ""}
-let g:lightline.tabline_subseparator = { 'left': "\ue0b1", 'right': "\ue0b3" }
+" let g:lightline.separator = { 'left': "\ue0b0", 'right': "\ue0b2" }
+" let g:lightline.subseparator = { 'left': "\ue0b1", 'right': "\ue0b3" }
+" let g:lightline.tabline_separator = { 'left': "\ue0b0", 'right': ""}
+" let g:lightline.tabline_subseparator = { 'left': "\ue0b1", 'right': "\ue0b3" }
 
 let g:lightline#bufferline#show_number = 2
 let g:lightline#bufferline#composed_number_map = {
