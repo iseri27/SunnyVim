@@ -50,7 +50,7 @@ nnoremap Q  :q!<CR>
 inoremap jj <ESC>
 inoremap JJ <ESC>
 
-nnoremap <leader>y "+yy
+nnoremap <leader>y v"+y
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P

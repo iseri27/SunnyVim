@@ -111,9 +111,10 @@ snippet todo "TODO comment" bw
 `!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%Y-%m-%d')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
 endsnippet
 
-##########
-#  Misc  #
-##########
+snippet basename "basename of file"
+${1:`!p snip.rv = (snip.basename or "name")`}
+endsnippet
+
 snippet uuid "Random UUID" w
 `!p if not snip.c: import uuid; snip.rv = str(uuid.uuid4())`
 endsnippet
