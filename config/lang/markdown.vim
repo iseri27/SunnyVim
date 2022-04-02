@@ -9,6 +9,6 @@
 
 "Markdown:
 autocmd FileType markdown setlocal wrap
-call utils#AddKeyForLang('markdown', ['n'], ['p'], ':MarkdownPreview<CR>', 'Real Time Preview')
+call utils#AddKeyForLang('markdown', ['n'], ['l'], ':MarkdownPreview<CR>', 'Real Time Preview')
 
 " vim: nowrap
