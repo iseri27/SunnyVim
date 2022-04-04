@@ -17,11 +17,6 @@ call utils#AddKeyGroup([g:leader_key_edit], '*Edit')
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'u'], ':undo<CR>', 'Undo')
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'r'], ':redo<CR>', 'Redo')
 
-"SECTION: NERDCommenter
-
-call utils#AddKeyGroup([g:leader_key_edit, 'c'], '*Comment')
-call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'c', 'l'], '<Plug>NERDCommenterInvert', 'Toggle Comment')
-call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'c', 'L'], '<Plug>NERDCommenterComment', 'Comment Lines')
 
 "SECTION: locate
 call utils#AddKeyGroup([g:leader_key_edit, 'l'], '*Locate Screen')
