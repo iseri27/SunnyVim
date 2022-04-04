@@ -1,11 +1,11 @@
-" =============================================================================
-"                ____                        __     ___              
-"               / ___| _   _ _ __  _ __  _   \ \   / (_)_ __ ___     
-"               \___ \| | | | '_ \| '_ \| | | \ \ / /| | '_ ` _ \    
-"                ___) | |_| | | | | | | | |_| |\ V / | | | | | | |   
-"               |____/ \__,_|_| |_|_| |_|\__, | \_/  |_|_| |_| |_|   
-"                                        |___/                       
-" =============================================================================
+" ============================================================================= "
+"                ____                        __     ___                         "
+"               / ___| _   _ _ __  _ __  _   \ \   / (_)_ __ ___                "
+"               \___ \| | | | '_ \| '_ \| | | \ \ / /| | '_ ` _ \               "
+"                ___) | |_| | | | | | | | |_| |\ V / | | | | | | |              "
+"               |____/ \__,_|_| |_|_| |_|\__, | \_/  |_|_| |_| |_|              "
+"                                        |___/                                  "
+" ============================================================================= "
 
 "SECTION: Text Edit
 
@@ -23,24 +23,6 @@ call utils#AddKeyGroup([g:leader_key_edit, 'c'], '*Comment')
 call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'c', 'l'], '<Plug>NERDCommenterInvert', 'Toggle Comment')
 call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'c', 'L'], '<Plug>NERDCommenterComment', 'Comment Lines')
 
-"SECTION: Case
-
-call utils#AddKeyGroup([g:leader_key_edit, 'x'], '*Case')
-call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'x', 'u'], '<Plug>Lowercase', 'To Lower Case')
-call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'x', 'U'], '<Plug>Uppercase', 'To Upper Case')
-call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'x', 't'], '<Plug>ToggleCase', 'Toggle Case')
-call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'x', 'w'], ['viw<Plug>Lowercase', '<Plug>Lowercase'], 'Word to Lower Case')
-call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'x', 'W'], ['viw<Plug>Uppercase', '<Plug>Uppercase'], 'Word to Upper Case')
-call utils#AddKey(['n', 'v'], [g:leader_key_edit, 'x', 'T'], ['viw<Plug>ToggleCase', '<Plug>ToggleCase'], 'Word Toggle Case')
-
-"SECTION: Select/Insert
-call utils#AddKeyGroup([g:leader_key_edit, 's'], '*Select')
-call utils#AddKey(['nnore'], [g:leader_key_edit, 's', 'w'], 'viw', 'Select Current Word')
-call utils#AddKey(['nnore'], [g:leader_key_edit, 's', 'i'], 'viw"_s', 'Delete Current Word and Insert')
-call utils#AddKey(['nnore'], [g:leader_key_edit, 's', 'd'], 'viw"_x', 'Delete Current Word')
-call utils#AddKey(['n'],     [g:leader_key_edit, 's', 's'], 'viw<C-j>', 'Select Current Word into UltiSnips')
-
-
 "SECTION: locate
 call utils#AddKeyGroup([g:leader_key_edit, 'l'], '*Locate Screen')
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'l', 't'], 'zt', 'Put Current Line at Top')
@@ -49,5 +31,37 @@ call utils#AddKey(['nnore'], [g:leader_key_edit, 'l', 'b'], 'zb', 'Put Current L
 
 "SECTION: line
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'j'], 'J', 'Join the Next Line')
+
+"SECTION: yank
+call utils#AddKeyGroup([g:leader_key_edit, 'y'], '*Yank')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_edit, 'y', 'a'], ['"ayy', '"ay'], 'Yank Line/Selected to Register a')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_edit, 'y', 'b'], ['"byy', '"by'], 'Yank Line/Selected to Register b')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_edit, 'y', 'c'], ['"cyy', '"cy'], 'Yank Line/Selected to Register c')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_edit, 'y', 'd'], ['"dyy', '"dy'], 'Yank Line/Selected to Register d')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_edit, 'y', 'e'], ['"eyy', '"ey'], 'Yank Line/Selected to Register e')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_edit, 'y', 'f'], ['"fyy', '"fy'], 'Yank Line/Selected to Register f')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_edit, 'y', 'g'], ['"gyy', '"gy'], 'Yank Line/Selected to Register g')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_edit, 'y', 'h'], ['"hyy', '"hy'], 'Yank Line/Selected to Register h')
+
+"SECTION: paste
+call utils#AddKeyGroup([g:leader_key_edit, 'p'], '*Paste')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'p', 'a'], '"ap', 'Paste from Register a')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'p', 'b'], '"bp', 'Paste from Register b')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'p', 'c'], '"cp', 'Paste from Register c')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'p', 'd'], '"dp', 'Paste from Register d')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'p', 'e'], '"ep', 'Paste from Register e')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'p', 'f'], '"fp', 'Paste from Register f')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'p', 'g'], '"gp', 'Paste from Register g')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'p', 'h'], '"hp', 'Paste from Register h')
+
+call utils#AddKeyGroup([g:leader_key_edit, 'P'], '*Paste Above')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'P', 'a'], '"aP', 'Paste Above from Register a')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'P', 'b'], '"bP', 'Paste Above from Register b')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'P', 'c'], '"cP', 'Paste Above from Register c')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'P', 'd'], '"dP', 'Paste Above from Register d')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'P', 'e'], '"eP', 'Paste Above from Register e')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'P', 'f'], '"fP', 'Paste Above from Register f')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'P', 'g'], '"gP', 'Paste Above from Register g')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'P', 'h'], '"hP', 'Paste Above from Register h')
 
 " vim: nowrap
