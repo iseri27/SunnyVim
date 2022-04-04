@@ -166,17 +166,25 @@ snippet fold_end "%}}}"
 endsnippet
 
 snippet code_from_file "Code from file"
-\lstinputlisting[
-	${1:style} = ${2:lang},
-	caption  = {\bf ${3:caption}}
-]{${4}}
-${VISUAL}$0
+\begin{center}
+	\begin{minipage}{${1:0.8}\linewidth}
+	\lstinputlisting[
+		${2:style} = ${3:lang},
+		caption  = {\bf ${4:caption}}
+	]{${5}}
+	\end{minipage}
+\end{center}
+$0
 endsnippet
 
 snippet code_block "Code Block"
-\begin{lstlisting}[${1:style}=${2:Clang}]
-$0
-\end{lstlisting}
+\begin{center}
+	\begin{minipage}{${1:0.8}\linewidth}
+	\begin{lstlisting}[${1:style}=${2:Clang}]
+	${VISUAL}$0
+	\end{lstlisting}
+	\end{minipage}
+\end{center}
 endsnippet
 
 # Bold text
