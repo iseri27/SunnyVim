@@ -77,10 +77,10 @@ vnoremap j gj
 nnoremap k gk
 vnoremap k gk
 vnoremap u gk
-nnoremap H 0
-vnoremap H 0
-nnoremap L $
-vnoremap L $
+nnoremap H 5h
+vnoremap H 5h
+nnoremap L 5l
+vnoremap L 5l
 
 " nnoremap u o<ESC>
 " nnoremap U O<ESC>
