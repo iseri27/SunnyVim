@@ -82,8 +82,10 @@ vnoremap H 0
 nnoremap L $
 vnoremap L $
 
-nnoremap u o<ESC>
-nnoremap U O<ESC>
+" nnoremap u o<ESC>
+" nnoremap U O<ESC>
+nnoremap u k
+nnoremap U 5k
 
 "SECTION: 缩进
 nnoremap < <<_

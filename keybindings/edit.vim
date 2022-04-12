@@ -14,8 +14,8 @@ let g:leader_key_edit = 'e'
 call utils#AddKeyGroup([g:leader_key_edit], '*Edit')
 
 "SECTION: Undo/Redo
-call utils#AddKey(['nnore'], [g:leader_key_edit, 'u'], ':undo<CR>', 'Undo')
-call utils#AddKey(['nnore'], [g:leader_key_edit, 'r'], ':redo<CR>', 'Redo')
+" call utils#AddKey(['nnore'], [g:leader_key_edit, 'u'], ':undo<CR>', 'Undo')
+" call utils#AddKey(['nnore'], [g:leader_key_edit, 'r'], ':redo<CR>', 'Redo')
 
 
 "SECTION: locate
