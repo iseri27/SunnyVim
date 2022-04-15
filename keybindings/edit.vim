@@ -18,11 +18,6 @@ call utils#AddKey(['nnore'], [g:leader_key_edit, 'u'], ':undo<CR>', 'Undo')
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'r'], ':redo<CR>', 'Redo')
 
 
-"SECTION: locate
-call utils#AddKeyGroup([g:leader_key_edit, 'l'], '*Locate Screen')
-call utils#AddKey(['nnore'], [g:leader_key_edit, 'l', 't'], 'zt', 'Put Current Line at Top')
-call utils#AddKey(['nnore'], [g:leader_key_edit, 'l', 'c'], 'zz', 'Put Current Line at Center')
-call utils#AddKey(['nnore'], [g:leader_key_edit, 'l', 'b'], 'zb', 'Put Current Line at Bottom')
 
 "SECTION: line
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'j'], 'J', 'Join the Next Line')
