@@ -47,6 +47,181 @@ endglobal
 
 # === }}} DEFINITION END
 
+
+snippet begin "\begin{} / \end{}" b
+\begin{${1:something}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+snippet "\\?begin" "\begin{} / \end{}" br
+\begin{${1:something}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+snippet abs "abstract environment" b
+\begin{abstract}
+	$0
+\end{abstract}
+endsnippet
+
+snippet tab "tabular / array environment" b
+\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
+$0${2/(?<=.)(c|l|r)|./(?1: & )/g}
+\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+endsnippet
+
+pre_expand "create_table(snip)"
+snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r
+endsnippet
+
+pre_expand "add_row(snip)"
+snippet "tr(\d+)" "Add table row of dimension ..." r
+endsnippet
+
+# snippet table "Table environment" b
+# \begin{table}[${1:htpb}]
+#     \centering
+#     \caption{${2:caption}}
+#     \label{tab:${3:label}}
+#     \begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
+#     $0${5/(?<=.)(c|l|r)|./(?1: & )/g}
+#     \end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+# \end{table}
+# endsnippet
+
+snippet it "Individual item" b
+\item $0
+endsnippet
+
+snippet part "Part" b
+\part{${1:part name}}
+$0
+endsnippet
+
+snippet cha "Chapter" b
+\chapter{${1:chapter name}}
+$0
+endsnippet
+
+snippet sec "Section"
+\section{${1:${VISUAL:section name}}}
+$0
+endsnippet
+
+snippet sec* "Section*"
+\section*{${1:${VISUAL:section name}}}
+$0
+endsnippet
+
+
+snippet sub "Subsection"
+\subsection{${1:${VISUAL:subsection name}}}
+$0
+endsnippet
+
+snippet sub* "Subsection*"
+\subsection*{${1:${VISUAL:subsection name}}}
+$0
+endsnippet
+
+snippet ssub "Subsubsection"
+\subsubsection{${1:${VISUAL:subsubsection name}}}
+$0
+endsnippet
+
+snippet ssub* "Subsubsection*"
+\subsubsection*{${1:${VISUAL:subsubsection name}}}
+${0}
+endsnippet
+
+snippet secf "Section with fold"
+\section{${1:${VISUAL:section name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet secf* "Section* with fold"
+\section*{${1:${VISUAL:section name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet subf "Subsection with fold"
+\subsection{${1:${VISUAL:subsection name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet subf* "Subsection* with fold"
+\subsection*{${1:${VISUAL:subsection name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet ssubf "Subsubsection with fold"
+\subsubsection{${1:${VISUAL:subsubsection name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet ssubf* "Subsubsection* with fold"
+\subsubsection*{${1:${VISUAL:subsubsection name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet par "Paragraph"
+\par
+$0
+endsnippet
+
+snippet subp "Subparagraph"
+\subparagraph{${1:${VISUAL:subparagraph name}}}
+$0
+endsnippet
+
+snippet pac "Package" b
+\usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
+endsnippet
+
+snippet lp "Long parenthesis"
+\left(${1:${VISUAL:contents}}\right)$0
+endsnippet
+
+snippet "mint(ed)?( (\S+))?" "Minted code typeset" br
+\begin{listing}
+\begin{minted}[linenos,numbersep=5pt,frame=lines,framesep=2mm]{${1:`!p
+snip.rv = match.group(3) if match.group(2) is not None else "language"`}}
+${2:${VISUAL:code}}
+\end{minted}
+\caption{${3:caption name}}
+\label{lst:${4:${3/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\end{listing}
+
+$0
+endsnippet
+
+snippet gln "New glossary item" b
+\newglossaryentry{${1:identifier}} {
+	name={${2:name}},
+	first={${3:first occurrence}},
+	sort={${4:sort value}},
+	description={${0:description}},
+}
+endsnippet
+snippet glnl "New long glossary item" b
+\longnewglossaryentry{${1:identifier}} {
+	name={${2:name}},
+	first={${3:first occurrence}},
+	sort={${4:sort value}},
+}
+{
+	${0:description}
+}
+endsnippet
+
 # === CUSTOM SNIPPETS BEGIN
 snippet concept "\concept{ }" b
 \concept{${VISUAL}$1}
@@ -249,181 +424,15 @@ snippet verb "\verb|contents|"
 \verb|$1|$0
 endsnippet
 
-# === }}} CUSTOM SNIPPETS END
-
-snippet begin "\begin{} / \end{}" b
-\begin{${1:something}}
-	${0:${VISUAL}}
-\end{$1}
-endsnippet
-
-snippet "\\?begin" "\begin{} / \end{}" br
-\begin{${1:something}}
-	${0:${VISUAL}}
-\end{$1}
-endsnippet
-
-snippet abs "abstract environment" b
-\begin{abstract}
-	$0
-\end{abstract}
-endsnippet
-
-snippet tab "tabular / array environment" b
-\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
-$0${2/(?<=.)(c|l|r)|./(?1: & )/g}
-\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
-endsnippet
-
-pre_expand "create_table(snip)"
-snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r
-endsnippet
-
-pre_expand "add_row(snip)"
-snippet "tr(\d+)" "Add table row of dimension ..." r
-endsnippet
-
-snippet table "Table environment" b
-\begin{table}[${1:htpb}]
+snippet table "table environment"
+\begin{table}[${1:H}]
 	\centering
-	\caption{${2:caption}}
-	\label{tab:${3:label}}
-	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
-	$0${5/(?<=.)(c|l|r)|./(?1: & )/g}
-	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+	${2:\caption\{\bf ${3}\}}
+	${4:\label\{${5}\}}
+	gentbl${6:ROWS}x${7:COLS}$0
 \end{table}
 endsnippet
 
-snippet it "Individual item" b
-\item $0
-endsnippet
-
-snippet part "Part" b
-\part{${1:part name}}
-$0
-endsnippet
-
-snippet cha "Chapter" b
-\chapter{${1:chapter name}}
-$0
-endsnippet
-
-snippet sec "Section"
-\section{${1:${VISUAL:section name}}}
-$0
-endsnippet
-
-snippet sec* "Section*"
-\section*{${1:${VISUAL:section name}}}
-$0
-endsnippet
-
-
-snippet sub "Subsection"
-\subsection{${1:${VISUAL:subsection name}}}
-$0
-endsnippet
-
-snippet sub* "Subsection*"
-\subsection*{${1:${VISUAL:subsection name}}}
-$0
-endsnippet
-
-snippet ssub "Subsubsection"
-\subsubsection{${1:${VISUAL:subsubsection name}}}
-$0
-endsnippet
-
-snippet ssub* "Subsubsection*"
-\subsubsection*{${1:${VISUAL:subsubsection name}}}
-${0}
-endsnippet
-
-snippet secf "Section with fold"
-\section{${1:${VISUAL:section name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet secf* "Section* with fold"
-\section*{${1:${VISUAL:section name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet subf "Subsection with fold"
-\subsection{${1:${VISUAL:subsection name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet subf* "Subsection* with fold"
-\subsection*{${1:${VISUAL:subsection name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet ssubf "Subsubsection with fold"
-\subsubsection{${1:${VISUAL:subsubsection name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet ssubf* "Subsubsection* with fold"
-\subsubsection*{${1:${VISUAL:subsubsection name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet par "Paragraph"
-\par
-$0
-endsnippet
-
-snippet subp "Subparagraph"
-\subparagraph{${1:${VISUAL:subparagraph name}}}
-$0
-endsnippet
-
-snippet pac "Package" b
-\usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
-endsnippet
-
-snippet lp "Long parenthesis"
-\left(${1:${VISUAL:contents}}\right)$0
-endsnippet
-
-snippet "mint(ed)?( (\S+))?" "Minted code typeset" br
-\begin{listing}
-\begin{minted}[linenos,numbersep=5pt,frame=lines,framesep=2mm]{${1:`!p
-snip.rv = match.group(3) if match.group(2) is not None else "language"`}}
-${2:${VISUAL:code}}
-\end{minted}
-\caption{${3:caption name}}
-\label{lst:${4:${3/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-\end{listing}
-
-$0
-endsnippet
-
-snippet gln "New glossary item" b
-\newglossaryentry{${1:identifier}} {
-	name={${2:name}},
-	first={${3:first occurrence}},
-	sort={${4:sort value}},
-	description={${0:description}},
-}
-endsnippet
-snippet glnl "New long glossary item" b
-\longnewglossaryentry{${1:identifier}} {
-	name={${2:name}},
-	first={${3:first occurrence}},
-	sort={${4:sort value}},
-}
-{
-	${0:description}
-}
-endsnippet
-
+# === }}} CUSTOM SNIPPETS END
 
 # vim:ft=snippets:fdm=marker
