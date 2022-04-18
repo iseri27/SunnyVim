@@ -433,6 +433,13 @@ snippet table "table environment"
 \end{table}
 endsnippet
 
+snippet tablen "table environment"
+\begin{table}[${1:H}]
+	\centering
+	gentbl${2:ROWS}x${3:COLS}$0
+\end{table}
+endsnippet
+
 # === }}} CUSTOM SNIPPETS END
 
 # vim:ft=snippets:fdm=marker
