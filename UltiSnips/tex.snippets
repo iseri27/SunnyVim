@@ -19,7 +19,7 @@ def create_table(snip):
 
 	snip.buffer[snip.line] = ''
 
-	final_str = old_spacing + "\\begin{tabular}{|" + "|".join(['$' + str(i + 1) for i in range(cols)]) + "|}\n"
+	final_str = old_spacing + "\\begin{tabular}{" + "".join(['$' + str(i + 1) for i in range(cols)]) + "}\n"
 
 	for i in range(rows):
 		final_str += old_spacing + '\t'
