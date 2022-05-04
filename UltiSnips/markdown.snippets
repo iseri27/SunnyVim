@@ -150,27 +150,27 @@ endsnippet
 # Text formatting #
 ###################
 
-snippet * "italic"
-*${1}${VISUAL}*$0
+snippet italic "* *"
+*${VISUAL}${1}*$0
 endsnippet
 
-snippet ** "bold"
-**${1}${VISUAL}**$0
+snippet bold "** **"
+**${VISUAL}${1}**$0
 endsnippet
 
-snippet *** "bold italics"
-***${1}${VISUAL}***$0
+snippet bitalic "*** ***"
+***${VISUAL}${1}***$0
 endsnippet
 
 snippet /* "Comment"
-<!-- ${1}${VISUAL} -->$0
+<!-- ${VISUAL}${1} -->$0
 endsnippet
 
 ################
 # Common stuff #
 ################
 snippet link "Link to something"
-[${1}${VISUAL:Text}](${2})$0
+[${VISUAL:Text}${1}](${2})$0
 endsnippet
 
 snippet img "Image"
@@ -178,7 +178,7 @@ snippet img "Image"
 endsnippet
 
 snippet codeinline "Inline Code" i
-\`${1:${VISUAL}}\`$0
+\`${VISUAL}${1}\`$0
 endsnippet
 
 snippet code "Codeblock" b
