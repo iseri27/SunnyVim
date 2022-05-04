@@ -150,27 +150,27 @@ endsnippet
 # Text formatting #
 ###################
 
-snippet * "italics"
-*${1:${VISUAL}}*$0
+snippet * "italic"
+*${1}${VISUAL}*$0
 endsnippet
 
 snippet ** "bold"
-**${1:${VISUAL}}**$0
+**${1}${VISUAL}**$0
 endsnippet
 
 snippet *** "bold italics"
-***${1:${VISUAL}}***$0
+***${1}${VISUAL}***$0
 endsnippet
 
 snippet /* "Comment"
-<!-- ${1:${VISUAL}} -->$0
+<!-- ${1}${VISUAL} -->$0
 endsnippet
 
 ################
 # Common stuff #
 ################
 snippet link "Link to something"
-[${1:${VISUAL:Text}}](${2})$0
+[${1}${VISUAL:Text}](${2})$0
 endsnippet
 
 snippet img "Image"
