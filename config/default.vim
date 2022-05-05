@@ -49,6 +49,7 @@ nnoremap Q  :q!<CR>
 "SECTION: 退出插入模式
 inoremap jj <ESC>
 inoremap JJ <ESC>
+inoremap <C-q> <ESC>
 
 nnoremap <leader>y "+yy
 vnoremap <leader>y "+y
