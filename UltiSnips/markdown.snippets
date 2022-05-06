@@ -80,28 +80,12 @@ snippet title "<center>title</center>" b
 $0
 endsnippet
 
-snippet image "<center><img /><center/>"
+snippet fig "<center><img /><center/>"
 <center>
 	<img src="${1}" width="${2:70%}"/>
 	${3:<p><b>${4:Caption}</b></p>}
 </center>
 ${VISUAL}$0
-endsnippet
-
-snippet underline "<u> </u>"
-<u>${1:content}</u>${VISUAL}$0
-endsnippet
-
-snippet underb "**<u> </u>**"
-**<u>$0</u>**
-endsnippet
-
-snippet underi "*<u> </u>*"
-*<u>$0</u>*
-endsnippet
-
-snippet underbi "***<u> </u>***"
-***<u>$0</u>***
 endsnippet
 
 snippet hr "-------------" b
@@ -146,26 +130,6 @@ snippet sspar "Sub Sub Paragraph" b
 $0
 endsnippet
 
-###################
-# Text formatting #
-###################
-
-snippet italic "* *"
-*${VISUAL}${1}*$0
-endsnippet
-
-snippet bold "** **"
-**${VISUAL}${1}**$0
-endsnippet
-
-snippet bitalic "*** ***"
-***${VISUAL}${1}***$0
-endsnippet
-
-snippet /* "Comment"
-<!-- ${VISUAL}${1} -->$0
-endsnippet
-
 ################
 # Common stuff #
 ################
@@ -181,7 +145,7 @@ snippet codeinline "Inline Code" i
 \`${VISUAL}${1}\`$0
 endsnippet
 
-snippet code "Codeblock" b
+snippet code "Codeblock"
 \`\`\`${1:language}
 ${2:${VISUAL}}
 \`\`\`
@@ -206,13 +170,56 @@ snippet detail "Disclosure"
 </details>
 endsnippet
 
-post_jump "create_table(snip)"
-snippet "tb([1-9][1-9])" "Fancy table" br
-`!p snip.rv = match.group(1)`
-endsnippet
+# post_jump "create_table(snip)"
+# snippet "gentbl([1-9])x([1-9])" "Fancy table" br
+# `!p snip.rv = match.group(1)`
+# endsnippet
 
 snippet caption "Centered Caption" b
 <center> <p> ${VISUAL}${1} </p> </center>
 endsnippet
 
+snippet italic "* *"
+*${VISUAL}${1}*$0
+endsnippet
+
+snippet italic_html "<i> </i>"
+<i>${VISUAL}${1}</i>$0
+endsnippet
+
+snippet bold "** **"
+**${VISUAL}${1}**$0
+endsnippet
+
+snippet bold_html "<b> </b>"
+<b>${VISUAL}${1}</b>$0
+endsnippet
+
+snippet bitalic "*** ***"
+***${VISUAL}${1}***$0
+endsnippet
+
+snippet bitalic_html "<b><i> </i></b>"
+<b><i>${VISUAL}${1}</i></b>$0
+endsnippet
+
+snippet underline "<u> </u>"
+<u>${VISUAL}${1}</u>$0
+endsnippet
+
+snippet underb "**<u> </u>**"
+<b><u>$0</u></b>
+endsnippet
+
+snippet underi "*<u> </u>*"
+<i><u>$0</u></i>
+endsnippet
+
+snippet underbi "***<u> </u>***"
+<b><i><u>$0</u></i></b>
+endsnippet
+
+snippet /* "Comment"
+<!-- ${VISUAL}${1} -->$0
+endsnippet
 # vim:ft=snippets:
