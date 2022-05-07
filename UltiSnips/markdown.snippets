@@ -179,24 +179,24 @@ snippet caption "Centered Caption" b
 <center> <p> ${VISUAL}${1} </p> </center>
 endsnippet
 
-snippet italic "* *"
-*${VISUAL}${1}*$0
-endsnippet
+# snippet italic "Italic Text"
+# <i>${VISUAL}${1}</i>$0
+# endsnippet
 
-snippet italic_html "<i> </i>"
+snippet "\\?it" "<i> </i>" r
 <i>${VISUAL}${1}</i>$0
 endsnippet
 
-snippet bold "** **"
-**${VISUAL}${1}**$0
+snippet bold "Bold Text"
+<u>${VISUAL}${1}</u>$0
 endsnippet
 
-snippet bold_html "<b> </b>"
-<b>${VISUAL}${1}</b>$0
+snippet "<?bd" "<b> </b>" r
+<b>${1}</b>${2}$0
 endsnippet
 
-snippet bitalic "*** ***"
-***${VISUAL}${1}***$0
+snippet bi "Bold Italic Text"
+<i><u>${VISUAL}${1}</u></i>$0
 endsnippet
 
 snippet bitalic_html "<b><i> </i></b>"
