@@ -179,44 +179,32 @@ snippet caption "Centered Caption" b
 <center> <p> ${VISUAL}${1} </p> </center>
 endsnippet
 
-# snippet italic "Italic Text"
-# <i>${VISUAL}${1}</i>$0
-# endsnippet
-
-snippet "\\?it" "<i> </i>" r
+snippet "\\?it" "Italic Text" r
 <i>${VISUAL}${1}</i>$0
 endsnippet
 
-snippet bold "Bold Text"
-<u>${VISUAL}${1}</u>$0
+snippet "\\?bd" "Bold Text" r
+<b>${VISUAL}${1}</b>$0
 endsnippet
 
-snippet "<?bd" "<b> </b>" r
-<b>${1}</b>${2}$0
-endsnippet
-
-snippet bi "Bold Italic Text"
+snippet "\\?bi" "Bold Italic Text" r
 <i><u>${VISUAL}${1}</u></i>$0
 endsnippet
 
-snippet bitalic_html "<b><i> </i></b>"
-<b><i>${VISUAL}${1}</i></b>$0
-endsnippet
-
-snippet underline "<u> </u>"
+snippet "\\?ul" "Underlined Text" r
 <u>${VISUAL}${1}</u>$0
 endsnippet
 
-snippet underb "**<u> </u>**"
-<b><u>$0</u></b>
+snippet "\\?ub" "Underlined Bold Text" r
+<b><u>${VISUAL}${1}</u></b>$0
 endsnippet
 
-snippet underi "*<u> </u>*"
-<i><u>$0</u></i>
+snippet "\\?ui" "Underlined Italic Text" r
+<i><u>${VISUAL}${1}</u></i>$0
 endsnippet
 
-snippet underbi "***<u> </u>***"
-<b><i><u>$0</u></i></b>
+snippet "\\?ubi" "Underlined Bold Italic Text" r
+<b><i><u>${VISUAL}${1}</u></i></b>$0
 endsnippet
 
 snippet /* "Comment"
