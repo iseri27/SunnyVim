@@ -355,36 +355,36 @@ ${VISUAL}$0
 endsnippet
 
 # Bold text
-snippet bold "\textbf{}"
+snippet "\\?bd" "\textbf{}" r
 \textbf{${VISUAL}$1}$0
 endsnippet
 
 # Italic text
-snippet italic "\textit{}"
+snippet "\\?italic" "\textit{}" r
 \textit{${VISUAL}$1}$0
 endsnippet
 
 # Underlined text
-snippet underline "\underline{}"
+snippet "\\?un" "\underline{}" r
 \underline{${VISUAL}$1}$0
 endsnippet
 
 # 段落居左
-snippet leftp "left aligned paragraph"
+snippet leftp "left aligned paragraph" b
 \begin{flushleft}
 ${VISUAL}$0
 \end{flushleft}
 endsnippet
 
 # 段落居右
-snippet rightp "right aligned paragraph"
+snippet rightp "right aligned paragraph" b
 \begin{flushright}
 ${VISUAL}$0
 \end{flushright}
 endsnippet
 
 # 段落居中
-snippet centerp "centered paragraph"
+snippet centerp "centered paragraph" b
 \begin{center}
 ${VISUAL}$0
 \end{center}
