@@ -365,8 +365,37 @@ snippet "\\?italic" "\textit{}" r
 endsnippet
 
 # Underlined text
-snippet "\\?un" "\underline{}" r
-\underline{${VISUAL}$1}$0
+snippet "\\?ul" "Underlined Text, ulem Package Required" r
+\uline{${VISUAL}$1}$0
+endsnippet
+
+# 双下划线
+snippet "\\?uul" "Double Underlined Text, ulem Package Required" r
+\uuline{${VISUAL}$1}$0
+endsnippet
+
+# 波浪线
+snippet "\\?uw" "波浪线, 需要 ulem 包 " r
+\uwave{${VISUAL}$1}$0
+endsnippet
+
+# 删除线
+snippet "\\?dl" "删除线, 需要 ulem 包" r
+\sout{${VISUAL}$1}$0
+endsnippet
+
+# 斜删除线
+snippet "\\?xl" "斜删除线, 需要 ulem 包" r
+\xout{${VISUAL}$1}$0
+endsnippet
+
+# 虚线
+snippet "\\?dashul" "虚线, 需要 ulem 包" r
+\dashuline{${VISUAL}$1}$0
+endsnippet
+
+snippet "\\?dotul" "加点, 需要 ulem 包" r
+\dotuline{${VISUAL}$1}$0
 endsnippet
 
 # 段落居左
