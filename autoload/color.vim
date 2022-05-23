@@ -40,7 +40,7 @@ function! color#set(colorscheme, bg) abort
 	let g:random_colorscheme_enable = v:false
 endfunction
 
-function! color#Random() abort
+function! color#RandomDark() abort
 	if exists('g:random_colorscheme_enable')
 		if g:random_colorscheme_enable == v:false
 			return
@@ -52,6 +52,24 @@ function! color#Random() abort
 	let l:c = g:colorscheme_list[l:n]
 
 	let &background = 'dark'
+	let g:lightline.colorscheme = l:c
+	execute 'colorscheme' .. ' ' .. l:c 
+
+	let g:random_colorscheme_enable = v:true
+endfunction
+
+function! color#RandomLight() abort
+	if exists('g:random_colorscheme_enable')
+		if g:random_colorscheme_enable == v:false
+			return
+		endif
+	endif
+
+	let l:len = len(g:colorscheme_list)
+	let l:n = utils#RandNumber() % l:len
+	let l:c = g:colorscheme_list[l:n]
+
+	let &background = 'light'
 	let g:lightline.colorscheme = l:c
 	execute 'colorscheme' .. ' ' .. l:c 
 
