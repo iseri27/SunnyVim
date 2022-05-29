@@ -7,23 +7,6 @@
 "                                        |___/                       
 " =============================================================================
 
-function! global#Toggle_wrap() abort
-	if &wrap == 0
-		setlocal wrap
-		echo "Set wrap"
-	else
-		setlocal nowrap
-		echo "Set nowrap"
-	endif
-endfunction
-
-function! global#ToggleTagbar() abort
-	echo "Latex File"
-	if &ft == 'tex'
-		execute ':VimtexTocToggle'
-	elseif &ft == 'c' || &ft == 'cpp' || &ft == 'python'
-		execute ':Vista!!'
-	else
-		execute ':TagbarToggle'
-	endif
-endfunction
+" ale, coc, nvim_lsp
+let g:vista_default_executive = 'coc'
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]

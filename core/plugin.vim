@@ -29,6 +29,7 @@ call dein#add('lilydjwg/colorizer',
 			\ {'on_cmd': ['ColorHighlight', 'ColorToggle', 'ColorClear']})
 call dein#add('preservim/tagbar',
 			\ {'on_cmd': 'TagbarToggle'})
+call dein#add('liuchengxu/vista.vim')
 call dein#add('preservim/nerdcommenter')
 call dein#add('itchyny/lightline.vim')
 call dein#add('mengelbrecht/lightline-bufferline')
