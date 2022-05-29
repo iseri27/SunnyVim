@@ -21,8 +21,6 @@ function! global#ToggleTagbar() abort
 	echo "Latex File"
 	if &ft == 'tex'
 		execute ':VimtexTocToggle'
-	elseif &ft == 'c' || &ft == 'cpp' || &ft == 'python'
-		execute ':Vista!!'
 	else
 		execute ':TagbarToggle'
 	endif

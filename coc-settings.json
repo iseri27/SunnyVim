@@ -61,7 +61,6 @@
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": false,
 
-    "translator.proxy": "socks://127.0.0.1:7891",
     "translator.engines": [
         "youdao"
     ],
