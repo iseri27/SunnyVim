@@ -105,6 +105,10 @@ else {
 }
 endsnippet
 
+snippet return "return value"
+return ${1:value};$0
+endsnippet
+
 snippet once "Include header once only guard"
 #ifndef ${1:`!p
 if not snip.c:
@@ -120,14 +124,6 @@ ${VISUAL}$0
 
 #endif /* end of include guard: $1 */
 endsnippet
-
-
-snippet "else if" "else if .. (eli)"
-else if (${1:/* condition */}) {
-	${VISUAL}$0
-}
-endsnippet
-
 
 snippet struct "struct"
 struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
