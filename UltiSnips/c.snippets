@@ -131,6 +131,10 @@ struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 };
 endsnippet
 
+snippet typedef "typedef type name" b
+typedef ${1:origin_type} ${2:custom_name};$0
+endsnippet
+
 snippet struct_typedef "typedef struct{}" b
 typedef struct ${1} {
 	${VISUAL}$0
