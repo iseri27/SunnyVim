@@ -342,14 +342,19 @@ endsnippet
 
 snippet code_from_file "Code from file"
 \lstinputlisting[
-	${1:style} = ${2:lang},
-	caption  = {\bf ${3:caption}}
-]{${4}}
+	style = ${1:GreyBackground},
+	${2:language} = ${3:lang},
+	${4:caption} = {\bf ${5:caption}}
+]{${6}}
 $0
 endsnippet
 
 snippet code_block "Code Block"
-\begin{lstlisting}[${1:style}=${2:GreyBackground}]
+\begin{lstlisting}[
+	style = ${1:GreyBackground},
+	${2:language = ${3:lang}},
+	${4:caption} = {\bf ${5:caption}}
+]
 ${VISUAL}$0
 \end{lstlisting}
 endsnippet
