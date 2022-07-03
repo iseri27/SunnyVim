@@ -19,6 +19,7 @@ let g:deol#floating_border = "double"
 
 " 在 terminal 窗口中进入 normal 模式
 tnoremap <ESC> <C-\><C-n>
+tnoremap <C-q> <C-\><C-n>:q<CR>
 
 " 在 terminal 窗口与其他窗口之间移动
 tnoremap <C-h> <C-\><C-n><C-w>h
