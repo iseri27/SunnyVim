@@ -48,10 +48,12 @@ call dein#add('lvht/tagbar-markdown',
 			\ {'on_ft': 'markdown', 'if': executable('php')})
 call dein#add('preservim/vim-markdown',
 			\ {'on_ft': 'markdown'})
-call dein#add('dag/vim-fish', {'on_ft': ['fish']})
+call dein#add('dag/vim-fish', 
+			\ {'on_ft': ['fish']})
 call dein#add('SirVer/ultisnips')
 call dein#add('neoclide/coc.nvim',
 			\ { 'merged': 0, 'rev': 'release' })
+call dein#add('posva/vim-vue')
 call dein#add('godlygeek/tabular')
 
 " Colorscheme:
