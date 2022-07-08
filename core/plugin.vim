@@ -55,8 +55,10 @@ call dein#add('dag/vim-fish',
 call dein#add('SirVer/ultisnips')
 call dein#add('neoclide/coc.nvim',
 			\ { 'merged': 0, 'rev': 'release' })
-call dein#add('posva/vim-vue')
+call dein#add('leafOfTree/vim-vue-plugin')
 call dein#add('godlygeek/tabular')
+call dein#add('Shougo/context_filetype.vim')
+call dein#add('tyru/caw.vim')
 
 " Colorscheme:
 call color#add('morhetz/gruvbox', 'gruvbox')
