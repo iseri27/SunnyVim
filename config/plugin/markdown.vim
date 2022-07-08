@@ -12,7 +12,7 @@
 let g:mkdp_auto_close = 0
 " when mkdp_refresh_slow to 1, only refresh when leave buffer
 let g:mkdp_refresh_slow = 1
-let g:mkdp_browser = 'firefox'
+let g:mkdp_browser = 'surf'
 let g:mkdp_page_title = '「${name}」'
 
 "PLUGIN: vim-markdown

@@ -18,9 +18,12 @@ function! global#Toggle_wrap() abort
 endfunction
 
 function! global#ToggleTagbar() abort
-	echo "Latex File"
 	if &ft == 'tex'
 		execute ':VimtexTocToggle'
+	elseif &ft == 'vim' || &ft == 'vue' || &ft == 'python' || &ft == 'c' || &ft == 'cpp' || &ft == 'lua'
+		execute ':Vista!!'
+	elseif &ft == 'vista'
+		execute ':Vista!'
 	else
 		execute ':TagbarToggle'
 	endif
