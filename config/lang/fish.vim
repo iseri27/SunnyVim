@@ -13,4 +13,3 @@ function! config#lang#fish#Run() abort
 	execute '!fish ./%'
 endfunction
 call utils#AddKeyForLang('fish', ['nnore'], ['l'], ':call config#lang#fish#Run() <CR>', 'Run this File')
-

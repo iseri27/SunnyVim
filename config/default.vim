@@ -43,7 +43,6 @@ command! QA qa
 nnoremap <C-S> :w<CR>
 nnoremap ww :w<CR>
 nnoremap wq :wq<CR>
-nnoremap qq :q<CR>
 nnoremap Q  :q!<CR>
 nnoremap <C-Q> :q<CR>
 nnoremap <C-w> :w<CR>

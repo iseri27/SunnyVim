@@ -28,4 +28,3 @@ tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
 nnoremap <Space>' :Deol -split=horizontal -winheight=10<CR>
-nnoremap <Space>; :Deol -split=horizontal -winheight=10<CR>

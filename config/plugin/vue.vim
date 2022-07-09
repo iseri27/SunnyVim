@@ -13,15 +13,15 @@ let g:vim_vue_plugin_config = {
       \}
 
 " Example: set local options based on syntax
-" function! OnChangeVueSyntax(syntax)
-"   echom 'Syntax is '.a:syntax
-"   if a:syntax == 'html'
-"     setlocal commentstring=<!--%s-->
-"     setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
-"   elseif a:syntax =~ 'css'
-"     setlocal comments=s1:/*,mb:*,ex:*/ commentstring&
-"   else
-"     setlocal commentstring=//%s
-"     setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-"   endif
-" endfunction
+function! OnChangeVueSyntax(syntax)
+  " echom 'Syntax is '.a:syntax
+  if a:syntax == 'html'
+	setlocal commentstring=<!--%s-->
+	setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+  elseif a:syntax =~ 'css'
+	setlocal comments=s1:/*,mb:*,ex:*/ commentstring&
+  else
+	setlocal commentstring=//%s
+	setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+  endif
+endfunction
