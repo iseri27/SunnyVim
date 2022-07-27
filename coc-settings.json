@@ -130,5 +130,6 @@
 			]
 		}
 	},
-	"vetur.ignoreProjectWarning": true
+	"vetur.ignoreProjectWarning": true,
+	"java.home": "/usr/lib/jvm/java-11-jdk"
 }
