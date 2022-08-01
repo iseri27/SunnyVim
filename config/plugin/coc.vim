@@ -11,11 +11,19 @@
 imap <silent> <C-o> <Plug>(coc-snippets-expand)
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <S-TAB>
+      \ coc#pum#visible() ? coc#pum#prev(1) :
+      \ <SID>check_back_space() ? "\<S-TAB>" :
+      \ coc#refresh()
+
+" Enter
+inoremap <silent><expr> <CR> coc#pum#visible() ? 
+			\ coc#pum#info()['index'] != -1 ? coc#_select_confirm() : coc#pum#stop()
+            \ : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 let g:coc_snippet_next = "<C-j>"
 let g:coc_snippet_prev = "<C-k>"

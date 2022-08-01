@@ -2,11 +2,9 @@
 	"suggest.noselect": true,
     "suggest.detailMaxLength": 30,
     "suggest.defaultSortMethod": "length",
-    "suggest.floatEnable": true,
     "suggest.labelMaxLength": 50,
     "suggest.enablePreselect": false,
     "suggest.detailField": "preview",
-
 
     "codeLens.enable": true,
 
