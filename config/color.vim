@@ -11,7 +11,7 @@
 "  - gruvbox
 "  - jellybeans
 "  - srcery
-colorscheme jellybeans
+colorscheme gruvbox
 set background=dark
 
 " vim: nowrap

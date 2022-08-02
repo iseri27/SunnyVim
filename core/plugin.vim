@@ -63,8 +63,8 @@ call dein#add('neoclide/jsonc.vim')
 
 " Colorscheme:
 call color#add('morhetz/gruvbox', 'gruvbox')
-call color#add('nanotech/jellybeans.vim', 'jellybeans')
-call color#add('ajmwagar/vim-deus', 'deus')
+" call color#add('nanotech/jellybeans.vim', 'jellybeans')
+" call color#add('ajmwagar/vim-deus', 'deus')
 call color#add('sainnhe/everforest', 'everforest')
 
 call dein#end()
