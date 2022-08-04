@@ -20,6 +20,6 @@ function! config#lang#rust#Clean() abort
 	execute "!rm ./%<.exe"
 endfunction
 
-call utils#AddKeyForLang('c', ['n'], ['l'], ':call config#lang#rust#Compile() <CR>', 'Compile this file')
-call utils#AddKeyForLang('c', ['n'], ['r'], ':call config#lang#rust#Run() <CR>'    , 'Run this file')
-call utils#AddKeyForLang('c', ['n'], ['c'], ':call config#lang#rust#Clean() <CR>'  , 'Clean')
+call utils#AddKeyForLang('rust', ['n'], ['l'], ':call config#lang#rust#Compile() <CR>', 'Compile this file')
+call utils#AddKeyForLang('rust', ['n'], ['r'], ':call config#lang#rust#Run() <CR>'    , 'Run this file')
+call utils#AddKeyForLang('rust', ['n'], ['c'], ':call config#lang#rust#Clean() <CR>'  , 'Clean')
