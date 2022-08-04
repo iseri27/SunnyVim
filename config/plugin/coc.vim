@@ -47,6 +47,7 @@ let g:coc_global_extensions = [
 	\    'coc-sumneko-lua',
 	\    'coc-explorer',
 	\    'coc-json',
+	\    'coc-rust-analyzer'
 	\ ]
 
 " vim: nowrap
