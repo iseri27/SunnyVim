@@ -126,9 +126,13 @@
 				"objc",
 				"objcpp"
 			]
+		},
+		"vala": {
+			"command": "vala-language-server",
+			"filetypes": ["vala"]
 		}
 	},
 	"vetur.ignoreProjectWarning": true,
-	"java.home": "/usr/lib/jvm/java-11-jdk",
+	"java.home": "/opt/local/java/jdk-11",
 	"rust-analyzer.server.path": "/opt/local/rust-analyzer/rust-analyzer"
 }
