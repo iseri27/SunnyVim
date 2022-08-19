@@ -52,6 +52,8 @@ call dein#add('preservim/vim-markdown',
 			\ {'on_ft': 'markdown'})
 call dein#add('dag/vim-fish', 
 			\ {'on_ft': ['fish']})
+call dein#add('arrufat/vala.vim',
+			\ {'on_ft': ['vala']})
 call dein#add('SirVer/ultisnips')
 call dein#add('neoclide/coc.nvim',
 			\ { 'merged': 0, 'rev': 'release' })
