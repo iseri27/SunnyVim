@@ -9,7 +9,7 @@
 
 function! config#lang#vala#Compile() abort
 	execute "w"
-	execute "!valac % -X -lm -o %<.exe"
+	execute "!valac % -o %<.exe -X -lm -X -w"
 endfunction
 
 function! config#lang#vala#Run() abort
