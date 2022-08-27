@@ -23,4 +23,4 @@ endfunction
 call utils#AddKeyForLang('vala', ['n'], ['l'], ':call config#lang#vala#Compile() <CR>', 'Compile this file')
 call utils#AddKeyForLang('vala', ['n'], ['r'], ':call config#lang#vala#Run() <CR>'    , 'Run this file')
 call utils#AddKeyForLang('vala', ['n'], ['c'], ':call config#lang#vala#Clean() <CR>'  , 'Clean')
-
+call utils#AddKeyForLang('cpp', ['n'], ['m'], ':call config#lang#makefile#Make() <CR>', 'Make')
