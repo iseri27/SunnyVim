@@ -52,5 +52,5 @@ call utils#AddKey(['vnore'], [g:leader_key_plugin, 't', '&'], ':Tabularize /& <C
 
 "SECTION: picgo
 call utils#AddKeyGroup([g:leader_key_plugin, 'p'], '*PicGo')
-call utils#AddKey(['nnore', 'vnore'], [g:leader_key_plugin, 'p', 'c'], ':UploadClipboard <CR>', 'Upload Image From Clipboard')
-call utils#AddKey(['nnore', 'vnore'], [g:leader_key_plugin, 'p', 'f'], ':UploadImageFile <CR>', 'Upload Image From File System')
+call utils#AddKey(['nnore', 'vnore'], [g:leader_key_plugin, 'p', 'c'], ':UploadImageFromClipboard <CR>', 'Upload Image From Clipboard')
+" call utils#AddKey(['nnore', 'vnore'], [g:leader_key_plugin, 'p', 'f'], ':UploadImageFile <CR>', 'Upload Image From File System')
