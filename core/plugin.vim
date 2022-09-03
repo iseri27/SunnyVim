@@ -62,12 +62,10 @@ call dein#add('godlygeek/tabular')
 call dein#add('Shougo/context_filetype.vim')
 call dein#add('tyru/caw.vim')
 call dein#add('neoclide/jsonc.vim')
-call dein#add('askfiy/nvim-picgo')
+call dein#add('Corona09/picgo.nvim')
 
 " Colorscheme:
 call color#add('morhetz/gruvbox', 'gruvbox')
-" call color#add('nanotech/jellybeans.vim', 'jellybeans')
-" call color#add('ajmwagar/vim-deus', 'deus')
 call color#add('sainnhe/everforest', 'everforest')
 
 call dein#end()

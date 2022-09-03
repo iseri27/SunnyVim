@@ -131,6 +131,10 @@
 		"vala": {
 			"command": "vala-language-server",
 			"filetypes": ["vala"]
+		},
+		"latex": {
+			"command": "digestif",
+			"filetypes": ["tex", "plaintex", "context"]
 		}
 	},
 
