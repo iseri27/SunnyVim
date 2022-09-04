@@ -12,7 +12,7 @@ function! color#add(repo, colorscheme) abort
 	endif
 
 	if index(g:colorscheme_list, a:colorscheme) < 0
-		call dein#add(a:repo)
+		Plug a:repo
 		call add(g:colorscheme_list, a:colorscheme)
 	endif
 	

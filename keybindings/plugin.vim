@@ -10,14 +10,11 @@
 let g:leader_key_plugin = 'p'
 
 call utils#AddKeyGroup([g:leader_key_plugin], '*Plugin')
-"SECTION: dein
-call utils#AddKeyGroup([g:leader_key_plugin, 'd'], '*Dein')
-call utils#AddKey(['nnore'], [g:leader_key_plugin, 'd', 'i'], ':call dein#install() <CR>', 'Install')
-call utils#AddKey(['nnore'], [g:leader_key_plugin, 'd', 'u'], ':Dein <CR>', 'Update Plugins')
-
-call utils#AddKeyGroup([g:leader_key_plugin, 'd', 'd'], '*Uninstall')
-call utils#AddKey(['nnore'], [g:leader_key_plugin, 'd', 'd', 'r'], ':call dein#recache_runtimepath()<CR>', 'Recache')
-call utils#AddKey(['nnore'], [g:leader_key_plugin, 'd', 'd', 'd'], ':call map(dein#check_clean(), "delete(v:val, ' . "'rf'" . ')")<CR>', 'Clean')
+"SECTION: vim-plug
+call utils#AddKeyGroup([g:leader_key_plugin, 'v'], '*Vim-Plug')
+call utils#AddKey(['nnore'], [g:leader_key_plugin, 'v', 's'], ':PlugStatus <CR>', 'Status')
+call utils#AddKey(['nnore'], [g:leader_key_plugin, 'v', 'u'], ':PlugUpdate <CR>', 'Update')
+call utils#AddKey(['nnore'], [g:leader_key_plugin, 'v', 'i'], ':PlugInstall <CR>', 'Install')
 
 "SECTION: coc
 call utils#AddKeyGroup([g:leader_key_plugin, 'c'], '*COC')

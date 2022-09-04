@@ -11,68 +11,37 @@ if &compatible
   set nocompatible
 endif
 
-" Required: Set runtimepath
-let s:dein_cache_path=expand('~/.cache/dein')
-let s:dein_path = s:dein_cache_path . '/repos/github.com/Shougo/dein.vim'
-let &runtimepath = &runtimepath . ',' . s:dein_path
+call plug#begin()
 
-call dein#begin(s:dein_cache_path)
+Plug 'Shougo/deol.nvim'
+Plug 'frazrepo/vim-rainbow'
+Plug 'lilydjwg/colorizer', { 'on': ['ColorHighlight', 'ColorToggle', 'ColorClear']}
+Plug 'preservim/tagbar' ,{ 'on': ['TagbarToggle'] }
+Plug 'liuchengxu/vista.vim', { 'on': ['Vista', 'Vista!', 'Vista!!'] }
+Plug 'preservim/nerdcommenter'
+Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'liuchengxu/vim-which-key'
+Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Git add .', 'Git commit', 'Git push', 'Git pull'] }
+Plug 'airblade/vim-gitgutter'
+Plug 'simnalamburt/vim-mundo', { 'on': ['MundoShow', 'MundoToggle'] }
+Plug 'lervag/vimtex', { 'for': ['bib', 'tex'] }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
+Plug 'iamcco/mathjax-support-for-mkdp', { 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
+Plug 'lvht/tagbar-markdown', { 'for': ['markdown'] }
+Plug 'preservim/vim-markdown', { 'for': ['markdown'] }
+Plug 'dag/vim-fish', { 'for': ['fish'] }
+Plug 'arrufat/vala.vim', { 'for': ['vala'] }
+Plug 'SirVer/ultisnips'
+Plug 'neoclide/coc.nvim', { 'branch': 'release'}
+Plug 'leafOfTree/vim-vue-plugin'
+Plug 'godlygeek/tabular'
+Plug 'Shougo/context_filetype.vim'
+Plug 'tyru/caw.vim'
+Plug 'neoclide/jsonc.vim'
+Plug 'Corona09/picgo.nvim'
 
-" Required: use dein to manage dein
-call dein#add(s:dein_path)
-
-" Plugins:
-call dein#add('wsdjeg/dein-ui.vim')
-call dein#add('Shougo/deol.nvim')
-call dein#add('frazrepo/vim-rainbow')
-call dein#add('lilydjwg/colorizer', 
-			\ {'on_cmd': ['ColorHighlight', 'ColorToggle', 'ColorClear']})
-call dein#add('preservim/tagbar',
-			\ {'on_cmd': 'TagbarToggle'})
-call dein#add('liuchengxu/vista.vim',
-			\ {'on_cmd': ['Vista', 'Vista!', 'Vista!!']} )
-call dein#add('preservim/nerdcommenter')
-call dein#add('itchyny/lightline.vim')
-call dein#add('mengelbrecht/lightline-bufferline')
-call dein#add('liuchengxu/vim-which-key')
-call dein#add('tpope/vim-fugitive',
-			\ {'on_cmd': ['Git', 'Git add .', 'Git commit', 'Git push', 'Git pull']})
-call dein#add('airblade/vim-gitgutter')
-call dein#add('simnalamburt/vim-mundo',
-			\ {'on_cmd': ['MundoToggle', 'MundoShow']})
-call dein#add('lervag/vimtex',
-			\ {'on_ft' : ['bib', 'tex']})
-call dein#add('iamcco/markdown-preview.nvim',
-			\ {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'sh -c "cd app && yarn install"' })
-call dein#add('iamcco/mathjax-support-for-mkdp', 
-			\ {'on_ft' : ['markdown', 'pandoc.markdown', 'rmd']})
-call dein#add('lvht/tagbar-markdown',
-			\ {'on_ft': 'markdown', 'if': executable('php')})
-call dein#add('preservim/vim-markdown',
-			\ {'on_ft': 'markdown'})
-call dein#add('dag/vim-fish', 
-			\ {'on_ft': ['fish']})
-call dein#add('arrufat/vala.vim',
-			\ {'on_ft': ['vala']})
-call dein#add('SirVer/ultisnips')
-call dein#add('neoclide/coc.nvim',
-			\ { 'merged': 0, 'rev': 'release' })
-call dein#add('leafOfTree/vim-vue-plugin')
-call dein#add('godlygeek/tabular')
-call dein#add('Shougo/context_filetype.vim')
-call dein#add('tyru/caw.vim')
-call dein#add('neoclide/jsonc.vim')
-call dein#add('Corona09/picgo.nvim')
-
-" Colorscheme:
 call color#add('morhetz/gruvbox', 'gruvbox')
 call color#add('sainnhe/everforest', 'everforest')
 
-call dein#end()
-
-" Install uninstalled plugins when startup
-" if dein#check_install()
-"     call dein#install()
-" endif
-
-" vim: nowrap
+call plug#end()
