@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   repo-sync:
-    runs-on: fedora
+    runs-on: ubuntu-latest
     steps:
     - name: Mirror the Github organization repos to Gitee.
       uses: Yikun/hub-mirror-action@master
