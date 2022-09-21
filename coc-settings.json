@@ -135,6 +135,11 @@
 		"latex": {
 			"command": "digestif",
 			"filetypes": ["tex", "plaintex", "context"]
+		},
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"filetypes": ["go"]
 		}
 	},
 
