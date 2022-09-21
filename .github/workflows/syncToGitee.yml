@@ -11,7 +11,7 @@ jobs:
       uses: Yikun/hub-mirror-action@master
       with:
         src: 'github/Corona09'
-        dst: 'gitee/Corona'
+        dst: 'gitee/corona09'
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token:  ${{ secrets.GITEE_TOKEN }}
         static_list: "SunnyVim"
