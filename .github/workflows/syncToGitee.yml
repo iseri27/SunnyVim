@@ -7,13 +7,13 @@ jobs:
   repo-sync:
     runs-on: fedora
     steps:
-      - name: Mirror the Github organization repos to Gitee.
-        uses: Yikun/hub-mirror-action@master
-        with:
-          src: 'github/Corona09'
-          dst: 'gitee/Corona'
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token:  ${{ secrets.GITEE_TOKEN }}
-          static_list: "SunnyVim"
-          force_update: true
-       debug: true
+    - name: Mirror the Github organization repos to Gitee.
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: 'github/Corona09'
+        dst: 'gitee/Corona'
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.GITEE_TOKEN }}
+        static_list: "SunnyVim"
+        force_update: true
+      debug: true
