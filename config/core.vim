@@ -24,4 +24,10 @@ endif
 " Locate cursor to last edit place
 autocmd BufReadPost    *  if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+function! config#core#open_buffer_below() abort
+	:set splitbelow
+	:sp
+	:resize -5
+endfunction
+
 " vim: nowrap

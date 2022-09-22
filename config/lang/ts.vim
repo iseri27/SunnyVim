@@ -9,11 +9,13 @@
 
 function! config#lang#ts#Compile() abort
 	execute "w"
-	execute "!tsc %"
+	call config#core#open_buffer_below()
+	terminal tsc %
 endfunction
 
 function! config#lang#ts#Run() abort
-	execute "!node ./%<.js"
+	call config#core#open_buffer_below()
+	terminal node ./%<.js
 endfunction
 
 function! config#lang#ts#Clean() abort

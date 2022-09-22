@@ -9,11 +9,13 @@
 
 function! config#lang#rust#Compile() abort
 	execute "w"
-	execute "!rustc % -o %<.exe"
+	call config#core#open_buffer_below()
+	terminal rustc % -o %<.exe
 endfunction
 
 function! config#lang#rust#Run() abort
-	execute "!./%<.exe"
+	call config#core#open_buffer_below()
+	terminal ./%.exe
 endfunction
 
 function! config#lang#rust#Clean() abort

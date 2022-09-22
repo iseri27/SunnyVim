@@ -9,11 +9,13 @@
 
 function! config#lang#cpp#Compile() abort
 	execute "w"
-	execute "!g++ % -std=c++11 -g -DDEBUG -Wall -o %<.exe"
+	call config#core#open_buffer_below()
+	terminal g++ % -std=c++11 -g -DDEBUG -Wall -o %<.exe
 endfunction
 
 function! config#lang#cpp#Run() abort
-	execute "!./%<.exe"
+	call config#core#open_buffer_below()
+	terminal ./%<.exe
 endfunction
 
 function! config#lang#cpp#Clean() abort

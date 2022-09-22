@@ -9,19 +9,18 @@
 
 function! config#lang#c#Compile() abort
 	execute "w"
-	execute "!gcc % -std=c11 -g -DDEBUG -Wall -lm -o %<.exe"
+	call config#core#open_buffer_below()
+	terminal gcc % -std=c11 -g -DDEBUG -Wall -lm -o %<.exe
 endfunction
 
 function! config#lang#c#Run() abort
-	execute "!./%<.exe"
+	execute "w"
+	call config#core#open_buffer_below()
+	terminal ./%<.exe
 endfunction
 
 function! config#lang#c#Clean() abort
 	execute "!rm ./%<.exe"
-endfunction
-
-function! config#lang#c#Make() abort
-	execute "!make"
 endfunction
 
 call utils#AddKeyForLang('c', ['n'], ['l'], ':call config#lang#c#Compile() <CR>', 'Compile this file')

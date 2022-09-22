@@ -1,3 +1,4 @@
 function! config#lang#makefile#Make() abort
-	execute "!make"
+	call config#core#open_buffer_below()
+	terminal make
 endfunction
