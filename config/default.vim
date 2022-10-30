@@ -70,6 +70,10 @@ vnoremap <C-B> <Left>
 nnoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ? coc#float#scroll(0) : "\<Left>"
 inoremap <C-B> <Left>
 
+"SECTION: 编辑
+inoremap <C-E>: <ESC>A
+inoremap <C-E>: <ESC>I
+
 nnoremap J 5j
 vnoremap J 5j
 nnoremap K 5k
