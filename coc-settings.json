@@ -143,8 +143,19 @@
 		}
 	},
 
-	"vetur.ignoreProjectWarning": true,
-
 	"java.home": "/opt/local/java/jdk-11",
-	"rust-analyzer.server.path": "/opt/local/rust-analyzer/rust-analyzer"
+	"rust-analyzer.server.path": "/opt/local/rust-analyzer/rust-analyzer",
+
+    "suggest.floatConfig": {
+        "border": true
+    },
+    "diagnostic.floatConfig": {
+        "border": true
+    },
+    "signature.floatConfig": {
+        "border": true
+    },
+    "hover.floatConfig": {
+        "border": true
+    }
 }
