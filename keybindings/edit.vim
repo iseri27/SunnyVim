@@ -21,6 +21,7 @@ call utils#AddKey(['nnore'], [g:leader_key_edit, 'r'], ':redo<CR>', 'Redo')
 
 "SECTION: line
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'j'], 'J', 'Join the Next Line')
+call utils#AddKey(['nnore'], [g:leader_key_edit, 'k'], 'k$J', 'Join the Previous Line')
 
 "SECTION: yank
 call utils#AddKeyGroup([g:leader_key_edit, 'y'], '*Yank')
