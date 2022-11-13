@@ -1,4 +1,12 @@
-" default
+" =============================================================================
+"                ____                        __     ___              
+"               / ___| _   _ _ __  _ __  _   \ \   / (_)_ __ ___     
+"               \___ \| | | | '_ \| '_ \| | | \ \ / /| | '_ ` _ \    
+"                ___) | |_| | | | | | | | |_| |\ V / | | | | | | |   
+"               |____/ \__,_|_| |_|_| |_|\__, | \_/  |_|_| |_| |_|   
+"                                        |___/                       
+" =============================================================================
+
 let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identifier',
                             \ 'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String',
                             \ 'Function', 'Conditional', 'Repeat', 'Operator', 'Structure',
@@ -34,8 +42,3 @@ function SetupLightlineColors() abort
 
   call lightline#colorscheme()
 endfunction
-
-" Comment out the `colorscheme`.
-let g:lightline = {
-		\ 'colorscheme': 'everforest'
-	  \ }
