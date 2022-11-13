@@ -36,4 +36,6 @@ function SetupLightlineColors() abort
 endfunction
 
 " Comment out the `colorscheme`.
-let g:lightline = { }
+let g:lightline = {
+		\ 'colorscheme': 'everforest'
+	  \ }
