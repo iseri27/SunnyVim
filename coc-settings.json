@@ -112,40 +112,6 @@
 		".": "toggleHidden"
 	},
 
-	"languageserver": {
-		"clangd": {
-			"command": "clangd",
-			"rootPatterns": [
-				"compile_flags.txt",
-				"compile_commands.json"
-			],
-			"filetypes": [
-				"c",
-				"cc",
-				"cpp",
-				"c++",
-				"objc",
-				"objcpp"
-			]
-		},
-		"vala": {
-			"command": "vala-language-server",
-			"filetypes": ["vala"]
-		},
-		"latex": {
-			"command": "digestif",
-			"filetypes": ["tex", "plaintex", "context"]
-		},
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": ["go.mod"],
-			"filetypes": ["go"]
-		}
-	},
-
-	"java.home": "/opt/local/java/jdk-11",
-	"rust-analyzer.server.path": "/opt/local/rust-analyzer/rust-analyzer",
-
     "suggest.floatConfig": {
         "border": true
     },
@@ -157,5 +123,6 @@
     },
     "hover.floatConfig": {
         "border": true
-    }
+    },
+    "snippets.ultisnips.pythonPrompt": false
 }

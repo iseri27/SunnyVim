@@ -12,7 +12,7 @@
 let g:mkdp_auto_close = 0
 " when mkdp_refresh_slow to 1, only refresh when leave buffer
 let g:mkdp_refresh_slow = 1
-let g:mkdp_browser = 'epiphany'
+let g:mkdp_browser = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
 let g:mkdp_page_title = '「${name}」'
 
 "PLUGIN: vim-markdown
