@@ -16,7 +16,8 @@ let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identif
 let g:transparent_groups += ['Pmenu']
 
 " coc.nvim
-let g:transparent_groups += ['NormalFloat', 'CocFloating']
+" let g:transparent_groups += ['NormalFloat', 'CocFloating']
+let g:transparent_groups += ['NormalFloat']
 
 autocmd VimEnter * call SetupLightlineColors()
 function SetupLightlineColors() abort
