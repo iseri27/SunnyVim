@@ -36,20 +36,21 @@ let g:lightline.component_type = {
 " let g:lightline.tabline_subseparator = { 'left': "\ue0b1", 'right': "\ue0b3" }
 
 let g:lightline#bufferline#show_number = 2
+
 let g:lightline#bufferline#composed_number_map = {
-	\ '1'  : '① ',
-	\ '2'  : '② ',
-	\ '3'  : '③ ',
-	\ '4'  : '④ ',
-	\ '5'  : '⑤ ',
-	\ '6'  : '⑥ ',
-	\ '7'  : '⑦ ',
-	\ '8'  : '⑧ ',
-	\ '9'  : '⑨ ',
-	\ '10' : '⑩ ',
-	\ '11' : '⑪ ',
-	\ '12' : '⑫ ',
-	\ '13' : '⑬ '
+	\ '1'  : '(1)',
+	\ '2'  : '(2)',
+	\ '3'  : '(3)',
+	\ '4'  : '(4)',
+	\ '5'  : '(5)',
+	\ '6'  : '(6)',
+	\ '7'  : '(7)',
+	\ '8'  : '(8)',
+	\ '9'  : '(9)',
+	\ '10' : '(10)',
+	\ '11' : '(11)',
+	\ '12' : '(12)',
+	\ '13' : '(13)'
 	\ }
 
 let g:ctrlp_status_func = {
