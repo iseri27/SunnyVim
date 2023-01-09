@@ -81,7 +81,7 @@
     "explorer.file.hiddenRules": {
         "extensions": [
             "o", "a", "exe", "run", "out", "obj",
-			"aux", "fls", "log", "fdb_latexmk", "toc", "log", "lof", "xdv",
+			"aux", "fls", "log", "fdb_latexmk", "toc", "log", "lof", "xdv", "bbl", "blg", "nav", "snm",
 			"zip", "rar", "gz", "tar", "7z",
 			"pdf", "doc", "docx", "ppt", "pptx", "xls", "xlsx",
 			"png", "jpg", "jpeg", "webp", "bmp", "jfif",
@@ -95,7 +95,8 @@
 		],
         "patternMatches": [
             "^\\.",
-			"\\.synctex\\.gz$"
+			"\\.synctex\\.gz$",
+			"\\.run\\.xml$"
         ]
     },
     "explorer.focus": true,
