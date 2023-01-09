@@ -10,7 +10,7 @@
 
     "coc.preferences.extensionUpdateCheck": "never",
     "coc.preferences.messageLevel": "warning",
-    "coc.preferences.snippetStatusText": "Ⓢ",
+    "coc.preferences.snippetStatusText": "Ⓢ ",
 
     "coc.source.vimtex.filetypes": [
         "latex"
@@ -35,7 +35,7 @@
         "operator": "洛",
         "property": "",
         "reference": "渚",
-        "snippet": "Ⓢ",
+        "snippet": "Ⓢ ",
         "struct": "פּ",
         "text": "",
         "typeParameter": "",
