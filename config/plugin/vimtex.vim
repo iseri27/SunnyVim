@@ -32,7 +32,8 @@ let g:vimtex_quickfix_ignore_filters = [
 		\     'Package hyperref Warning',
 		\     'Underfull',
 		\     'Overfull',
-		\     'LaTeX Warning: You have requested document'
+		\     'LaTeX Warning: You have requested document',
+		\     'Package biblatex Warning: Using fall-back BibTeX(8) backend'
 		\]
 
 let g:vimtex_mappings_enabled = 0
