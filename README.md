@@ -9,3 +9,5 @@ Corona 的个人 vim 配置, 使用 vim-plug 管理插件.
 ```vim
 call color#RandomDark()
 ```
+
+如果启用 transparent 插件, 则不要使用 everforest 主题, 部分背景显示怪异, 不会透明.

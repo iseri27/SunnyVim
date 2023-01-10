@@ -32,6 +32,7 @@ Plug 'tyru/caw.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'neoclide/jsonc.vim'
 Plug 'Corona09/picgo.nvim'
+Plug 'tribela/vim-transparent'
 
 " ============= For Languages ============
 Plug 'lervag/vimtex', { 'for': ['bib', 'tex'] }
