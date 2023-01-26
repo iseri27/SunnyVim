@@ -17,7 +17,6 @@ Plug 'Shougo/deol.nvim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'lilydjwg/colorizer', { 'on': ['ColorHighlight', 'ColorToggle', 'ColorClear']}
 Plug 'preservim/tagbar' ,{ 'on': ['TagbarToggle'] }
-Plug 'liuchengxu/vista.vim', { 'on': ['Vista', 'Vista!', 'Vista!!'] }
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'liuchengxu/vim-which-key'
@@ -46,6 +45,5 @@ Plug 'leafOfTree/vim-vue-plugin'
 " ========================================
 
 call color#add('morhetz/gruvbox', 'gruvbox')
-call color#add('sainnhe/everforest', 'everforest')
 
 call plug#end()
