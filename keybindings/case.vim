@@ -1,19 +1,8 @@
-" ============================================================================= "
-"                ____                        __     ___                         "
-"               / ___| _   _ _ __  _ __  _   \ \   / (_)_ __ ___                "
-"               \___ \| | | | '_ \| '_ \| | | \ \ / /| | '_ ` _ \               "
-"                ___) | |_| | | | | | | | |_| |\ V / | | | | | | |              "
-"               |____/ \__,_|_| |_|_| |_|\__, | \_/  |_|_| |_| |_|              "
-"                                        |___/                                  "
-" ============================================================================= "
-
 " SECTION: Word
-
 let g:leader_key_case = 'x'
-
 call utils#AddKeyGroup([g:leader_key_case], '*Case')
-"SECTION: Case
 
+"SECTION: Case
 call utils#AddKey(['n', 'v'], [g:leader_key_case, 'u'], '<Plug>Lowercase', 'To Lower Case')
 call utils#AddKey(['n', 'v'], [g:leader_key_case, 'U'], '<Plug>Uppercase', 'To Upper Case')
 call utils#AddKey(['n', 'v'], [g:leader_key_case, 't'], '<Plug>ToggleCase', 'Toggle Case')

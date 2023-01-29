@@ -1,23 +1,10 @@
-" ============================================================================= "
-"                ____                        __     ___                         "
-"               / ___| _   _ _ __  _ __  _   \ \   / (_)_ __ ___                "
-"               \___ \| | | | '_ \| '_ \| | | \ \ / /| | '_ ` _ \               "
-"                ___) | |_| | | | | | | | |_| |\ V / | | | | | | |              "
-"               |____/ \__,_|_| |_|_| |_|\__, | \_/  |_|_| |_| |_|              "
-"                                        |___/                                  "
-" ============================================================================= "
-
 "SECTION: Text Edit
-
 let g:leader_key_edit = 'e'
-
 call utils#AddKeyGroup([g:leader_key_edit], '*Edit')
 
 "SECTION: Undo/Redo
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'u'], ':undo<CR>', 'Undo')
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'r'], ':redo<CR>', 'Redo')
-
-
 
 "SECTION: line
 call utils#AddKey(['nnore'], [g:leader_key_edit, 'j'], 'J', 'Join the Next Line')
