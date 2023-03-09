@@ -1,0 +1,21 @@
+priority -50
+
+snippet article "@Article { }" b
+@Article { ${1:name},
+	title   = "${2:title}",
+	author  = "${3:author}",
+	journal = "${4:journal}",
+	year    = "${5:year}"
+}
+$0
+endsnippet
+
+snippet book "@Book { }" b
+@Book { ${1:name},
+	title     = "${2:title}",
+	author    = "${3:author}",
+	publisher = "${4:publisher}",
+	year      = "${5:year}"
+}
+$0
+endsnippet

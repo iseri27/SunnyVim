@@ -1,0 +1,77 @@
+priority -50
+
+snippet return "return value"
+return $1;
+endsnippet
+
+snippet fn "fn () {}"
+fn ${1:func_name}(${2:argv})${3: -> ${4:return_type}} {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fn_abstract "fn () {};"
+fn ${1:func_name} (${2:argv})${3: -> ${4:return_type}};$0
+endsnippet
+
+snippet main "fn main() {}" b
+fn main() {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet if "if condition {}"
+if ${1:condition} {
+	${VISUAL}$2
+}$0
+endsnippet
+
+snippet elseif "else if condition {}"
+else if ${1:condition} {
+	${VISUAL}$2
+}$0
+endsnippet
+
+snippet else "else {}"
+else {
+	${VISUAL}$1
+}$0
+endsnippet
+
+snippet while "while condition {}"
+while ${1:condition} {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet for "for i in range {}"
+for ${1:i} in ${2:range} {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet loop "loop {}"
+loop {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet mod "mod {}"
+mod ${1:mod_name} {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet impl "impl {}"
+impl $1 {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet println "println!(...)"
+println!("${1:str}"${2:var})$0
+endsnippet
+
+snippet print "print!(...)"
+print!("${1:str}"${2:var})$0
+endsnippet

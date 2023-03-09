@@ -141,11 +141,18 @@
 			"command": "gopls",
 			"rootPatterns": ["go.mod"],
 			"filetypes": ["go"]
+		},
+		"nix": {
+			"command": "rnix-lsp",
+			"filetypes": ["nix"]
+		},
+		"bash": {
+			"command": "bash-language-server",
+			"args": ["start"],
+			"filetypes": ["sh"]
 		}
 	},
 
-	"java.home": "/opt/local/java/jdk-11",
-	"rust-analyzer.server.path": "/opt/local/rust-analyzer/rust-analyzer",
 
     "suggest.floatConfig": {
         "border": true

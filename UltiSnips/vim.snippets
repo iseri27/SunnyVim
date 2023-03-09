@@ -1,0 +1,14 @@
+priority -50
+
+snippet header "standard Vim script file header"
+	" File: ${1:`expand('%:t')`}
+	" Author: ${2:`g:snips_author`}
+	" Description: ${3}
+	${0:" Last Modified: `strftime("%B %d, %Y")`}
+endsnippet
+
+snippet function "function" b
+function${1:!} ${2:FuncName}(${3})${4}
+	$0
+endfunction
+endsnippet

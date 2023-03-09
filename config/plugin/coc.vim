@@ -33,7 +33,6 @@ let g:coc_global_extensions = [
 	\    'coc-tsserver',
 	\    'coc-pyright',
 	\    'coc-vimlsp',
-	\    'coc-sh',
 	\    'coc-fish',
 	\    'coc-sumneko-lua',
 	\    'coc-explorer',

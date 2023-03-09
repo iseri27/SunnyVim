@@ -1,0 +1,241 @@
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+# --------------
+# Functions
+# --------------
+global !p
+def printf_expand_args(snip):
+	"""
+	This will look how many placeholders printf has and adds the separated commas
+	at the end.
+	"""
+	
+	# now add so many "," as much as the amount of placeholders
+	amount_placeholders = snip.tabstops[1].current_text.count("%")
+
+	output = ""
+
+	# Add the amount of tabstops
+	for placeholder_index in range(3, amount_placeholders + 3):
+		output += f", ${placeholder_index}"
+	
+	# convert them into tabstops
+	snip.expand_anon(output)
+
+endglobal
+
+# ==============
+# Snippets 
+# ==============
+priority -50
+
+snippet SAFE_FREE "#define SAFE_FREE(ptr)"
+#define ${1:SAFE_FREE}(${2:ptr}) do { \
+	free(($2)); \
+	($2) = NULL; \
+} while(0);
+endsnippet
+
+snippet /** "Block Comment"
+/**
+ * ${VISUAL}$0
+ */
+endsnippet
+
+snippet #ifndef "#ifndef ... #define ... #endif"
+#ifndef ${1/([A-Za-z0-9_]+).*/$1/}
+#define ${1:SYMBOL} ${2:value}
+#endif /* ifndef $1 */
+endsnippet
+
+snippet #ifdef "#ifdef ... #endif" b
+#ifdef ${1:macro}
+${VISUAL}$0
+#endif
+endsnippet
+
+snippet #if "#if #endif" b
+#if ${1:0}
+${VISUAL}$0
+#endif
+endsnippet
+
+snippet main "main(void) {}" b
+int main() {
+	$0
+	return 0;
+}
+endsnippet
+
+snippet mains "main(int argc, char* argv[]) {}"
+int main(int argc, char *argv[]) {
+	$0
+	return 0;
+}
+endsnippet
+
+snippet for "for loop (for)"
+for (${1:var}; ${2:condition}; ${3:action}) {
+	$0
+}
+endsnippet
+
+snippet fori "for(int i=...;...;i++)"
+for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:$2++}) {
+	$0
+}
+endsnippet
+
+snippet do "do { } while ();"
+do {
+	${VISUAL}$0
+} while (${1});
+endsnippet
+
+snippet while "while () {}"
+while (${1}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet if "if () {}"
+if (${1}) {
+	${VISUAL}$2
+}$0
+endsnippet
+
+snippet elseif "else if () {}"
+else if (${1}) {
+	${VISUAL}$2
+}$0
+endsnippet
+
+snippet else "else {}"
+else {
+	${VISUAL}$1
+}$0
+endsnippet
+
+snippet return "return value"
+return ${1:value};$0
+endsnippet
+
+snippet once "Include header once only guard"
+#ifndef __${1:`!p
+if not snip.c:
+	import random, string
+	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
+	rand = ''.join(random.sample(string.ascii_letters+string.digits, 8))
+	snip.rv = ('%s_%s' % (name,rand)).upper()
+else:
+	snip.rv = snip.c`}
+#define __$1
+
+${VISUAL}$0
+
+#endif /* end of include guard: __$1 */
+endsnippet
+
+snippet struct "struct" b
+struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
+	${0:/* data */}
+};
+endsnippet
+
+snippet typedef "typedef type name" b
+typedef ${1:origin_type} ${2:custom_name};$0
+endsnippet
+
+snippet struct_typedef "typedef struct{}" b
+typedef struct ${1} {
+	${VISUAL}$0
+} ${1:struct_name};
+endsnippet
+
+snippet function "function" b
+${1:void} ${2:function_name}($3) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet func_dec "function declaration" b
+${1:void} ${2:function_name}($3);
+endsnippet
+
+global !p
+def split_line(text):
+	import textwrap
+	lines = textwrap.wrap(text, 78 - 19)
+	output = list()
+	for line in lines:
+		output.append('*' + ' '*19 + line)
+	snip_line = snip.tabstops[4].end[0]
+	snip.buffer.append(output, snip_line + 1)
+	del snip.buffer[snip_line]
+
+def get_args(arglist):
+	args = [arg.strip() for arg in arglist.split(',') if arg]
+	return args
+endglobal
+
+post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
+snippet head_file "File Header" b
+/******************************************************************************
+* File:             `!p snip.rv = fn`
+*
+* Author:           ${2}  
+* Created:          `date +%m/%d/%y` 
+* Description:      ${4:${VISUAL}}
+*****************************************************************************/
+${0}
+endsnippet
+
+post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
+snippet head_func "Function Header" 
+/******************************************************************************
+* Function:         $1
+* Description:      ${4:${VISUAL}}
+* Where:`!p 
+snip.rv = ""
+snip >> 2
+
+args = get_args(t[2])
+if args:
+	for arg in args:
+		snip.rv += '\n' + '*' + ' '*19 + arg + ' - TODO'
+snip << 2
+`
+* Return:           $5
+* Error:            $6
+*****************************************************************************/
+${1}($2){
+	${0}
+}
+endsnippet
+
+###################################
+# Built in functions
+###################################
+
+snippet fprintf "fprintf(FILE*, ...)"
+fprintf(${1:stderr}, "${2:format}"${3:var})
+endsnippet
+
+snippet printf "printf(...)" w
+printf("${1:format}"${2:var});
+endsnippet
+
+###################################
+# Custom in functions
+###################################
+snippet readnum "type readnum" b
+${1:int} read${2:int}() {
+	${1} f = 1, x = 0; int c = getchar();
+	while (c < '0' || c > '9') { if (c == '-') f = -1; c = getchar(); }
+	while (c >= '0' && c <= '9') { x = x * 10 + c - (${1})'0'; c = getchar(); }
+	return f * x;
+}
+endsnippet
+
+# vim:ft=snippets

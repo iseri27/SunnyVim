@@ -1,0 +1,487 @@
+priority -50
+
+extends texmath
+
+global !p
+
+# === {{{ DEFINITION BEGIN
+def create_table(snip):
+	rows = snip.buffer[snip.line].split('x')[0]
+	cols = snip.buffer[snip.line].split('x')[1]
+
+	int_val = lambda string: int(''.join(s for s in string if s.isdigit()))
+
+	rows = int_val(rows)
+	cols = int_val(cols)
+
+	offset = cols + 1
+	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
+
+	snip.buffer[snip.line] = ''
+
+	final_str = old_spacing + "\\begin{tabular}{" + "".join(['$' + str(i + 1) for i in range(cols)]) + "}\n"
+
+	for i in range(rows):
+		final_str += old_spacing + '\t'
+		final_str += " & ".join(['$' + str(i * cols + j + offset) for j in range(cols)])
+
+		final_str += " \\\\\\\n"
+
+	final_str += old_spacing + "\\end{tabular}\n$0"
+
+	snip.expand_anon(final_str)
+
+def add_row(snip):
+	row_len = int(''.join(s for s in snip.buffer[snip.line] if s.isdigit()))
+	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
+
+	snip.buffer[snip.line] = ''
+
+	final_str = old_spacing
+	final_str += " & ".join(['$' + str(j + 1) for j in range(row_len)])
+	final_str += " \\\\\\"
+
+	snip.expand_anon(final_str)
+
+endglobal
+
+# === }}} DEFINITION END
+
+
+snippet begin "\begin{} / \end{}" b
+\begin{${1:something}}
+	${VISUAL}$0
+\end{$1}
+endsnippet
+
+snippet "\\?begin" "\begin{} / \end{}" br
+\begin{${1:something}}
+	${VISUAL}$0
+\end{$1}
+endsnippet
+
+snippet abs "abstract environment" b
+\begin{abstract}
+	$0
+\end{abstract}
+endsnippet
+
+snippet tab "tabular / array environment" b
+\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
+$0${2/(?<=.)(c|l|r)|./(?1: & )/g}
+\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+endsnippet
+
+pre_expand "create_table(snip)"
+snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r
+endsnippet
+
+pre_expand "add_row(snip)"
+snippet "tr(\d+)" "Add table row of dimension ..." r
+endsnippet
+
+# snippet table "Table environment" b
+# \begin{table}[${1:htpb}]
+#     \centering
+#     \caption{${2:caption}}
+#     \label{tab:${3:label}}
+#     \begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
+#     $0${5/(?<=.)(c|l|r)|./(?1: & )/g}
+#     \end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+# \end{table}
+# endsnippet
+
+snippet it "Individual item" b
+\item $0
+endsnippet
+
+snippet part "Part" b
+\part{${1:part name}}
+$0
+endsnippet
+
+snippet cha "Chapter" b
+\chapter{${1:chapter name}}
+$0
+endsnippet
+
+snippet sec "Section"
+\section{${1:${VISUAL:section name}}}
+$0
+endsnippet
+
+snippet sec* "Section*"
+\section*{${1:${VISUAL:section name}}}
+$0
+endsnippet
+
+
+snippet sub "Subsection"
+\subsection{${1:${VISUAL:subsection name}}}
+$0
+endsnippet
+
+snippet sub* "Subsection*"
+\subsection*{${1:${VISUAL:subsection name}}}
+$0
+endsnippet
+
+snippet ssub "Subsubsection"
+\subsubsection{${1:${VISUAL:subsubsection name}}}
+$0
+endsnippet
+
+snippet ssub* "Subsubsection*"
+\subsubsection*{${1:${VISUAL:subsubsection name}}}
+${0}
+endsnippet
+
+snippet secf "Section with fold"
+\section{${1:${VISUAL:section name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet secf* "Section* with fold"
+\section*{${1:${VISUAL:section name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet subf "Subsection with fold"
+\subsection{${1:${VISUAL:subsection name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet subf* "Subsection* with fold"
+\subsection*{${1:${VISUAL:subsection name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet ssubf "Subsubsection with fold"
+\subsubsection{${1:${VISUAL:subsubsection name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet ssubf* "Subsubsection* with fold"
+\subsubsection*{${1:${VISUAL:subsubsection name}}} %{{{
+$0
+%}}}
+endsnippet
+
+snippet par "Paragraph"
+\par
+$0
+endsnippet
+
+snippet subp "Subparagraph"
+\subparagraph{${1:${VISUAL:subparagraph name}}}
+$0
+endsnippet
+
+snippet pac "Package" b
+\usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
+endsnippet
+
+snippet lp "Long parenthesis"
+\left(${1:${VISUAL:contents}}\right)$0
+endsnippet
+
+snippet "mint(ed)?( (\S+))?" "Minted code typeset" br
+\begin{listing}
+\begin{minted}[linenos,numbersep=5pt,frame=lines,framesep=2mm]{${1:`!p
+snip.rv = match.group(3) if match.group(2) is not None else "language"`}}
+${2:${VISUAL:code}}
+\end{minted}
+\caption{${3:caption name}}
+\label{lst:${4:${3/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\end{listing}
+
+$0
+endsnippet
+
+snippet gln "New glossary item" b
+\newglossaryentry{${1:identifier}} {
+	name={${2:name}},
+	first={${3:first occurrence}},
+	sort={${4:sort value}},
+	description={${0:description}},
+}
+endsnippet
+snippet glnl "New long glossary item" b
+\longnewglossaryentry{${1:identifier}} {
+	name={${2:name}},
+	first={${3:first occurrence}},
+	sort={${4:sort value}},
+}
+{
+	${0:description}
+}
+endsnippet
+
+# === CUSTOM SNIPPETS BEGIN
+snippet concept "\concept{ }" b
+\concept{${VISUAL}$1}
+$0
+endsnippet
+
+snippet something "\something{ }" b
+\something{${VISUAL}$1}
+endsnippet
+
+snippet noi "\noindent" b
+\noindent
+$0
+endsnippet
+
+snippet date "\date{}" b
+\\date\{${1:today}}
+endsnippet
+
+snippet title "\title{}" b
+\title\{${1:title}}
+endsnippet
+
+snippet toc "Gentrate contents" b
+\tableofcontents
+endsnippet
+
+snippet bs "\textbackslash"
+\textbackslash
+endsnippet
+
+snippet fig "insert a figure"
+\begin{figure}[${1:H}]
+	\centering
+	\includegraphics[${2:width=0.${3:7}\linewidth}]
+	{${4}}
+	\caption{\bf ${5}}
+\end{figure}
+endsnippet
+
+snippet fig2 "two figure"
+\begin{figure}[${1:H}]
+	\centering
+	\includegraphics[${2:width=0.${3:4}\linewidth}]
+	{${4}}
+	\hspace{${5:10pt}}
+	\includegraphics[${6:width=0.${7:4}\linewidth}]
+	{${8}}
+	\caption{\bf ${9}}
+\end{figure}
+endsnippet
+
+snippet fig_with_border	"figure with border"
+\begin{figure}[${1:H}]
+	\centering
+	\fbox{
+		\includegraphics[ ${2:width=0.${3:7}\linewidth}]
+		{${4}}
+	}
+	\caption{\bf ${5}}
+\end{figure}
+endsnippet
+
+snippet fig2_with_border "two figure with border"
+\begin{figure}[${1:H}]
+	\centering
+	\fbox{
+		\includegraphics[${2:width=0.${3:4}\linewidth}]
+		{${4}}
+	}
+	\hspace{${5:10pt}}
+	\fbox{
+		\includegraphics[${6:width=0.${7:4}\linewidth}]
+		{${8}}
+	}
+	\caption{\bf ${9}}
+\end{figure}
+endsnippet
+
+snippet fig2_with_2caption "two figure with separated captions"
+\begin{figure}[${1:H}]
+	\centering
+	\begin{minipage}{0.${2:4}\linewidth}
+		\centering
+		\includegraphics[height=${3:160pt}]
+		{${4}}
+		\caption{\bf ${5}}
+	\end{minipage}
+	\hspace{10pt}
+	\begin{minipage}{0.${2}\linewidth}
+		\centering
+		\includegraphics[height=${3}]
+		{${6}}
+		\caption{\bf ${7}}
+	\end{minipage}
+\end{figure}
+endsnippet
+
+snippet fbox "\fbox{}"
+\fbox{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet fold "%{{{ %}}}"
+% {{{
+${VISUAL}$0
+% }}}
+endsnippet
+
+snippet fold_begin "%{{{"
+% {{{
+endsnippet
+
+snippet fold_end "%}}}"
+% }}}
+endsnippet
+
+snippet code_from_file "Code from file"
+\lstinputlisting[
+	style = ${1:GreyBackground},
+	${2:language = ${3:lang},}
+	${4:caption} = {\bf ${5:caption}}
+]{${6}}
+$0
+endsnippet
+
+snippet code_block "Code Block"
+\begin{lstlisting}[
+	style = ${1:GreyBackground},
+	${2:language = ${3:lang},}
+	${4:caption} = {\bf ${5:caption}}
+]
+${VISUAL}$0
+\end{lstlisting}
+endsnippet
+
+# Bold text
+snippet "\\?bd" "\textbf{}" r
+\textbf{${VISUAL}$1}$0
+endsnippet
+
+# Italic text
+snippet "\\?italic" "\textit{}" r
+\textit{${VISUAL}$1}$0
+endsnippet
+
+# Underlined text
+snippet "\\?ul" "Underlined Text, ulem Package Required" r
+\uline{${VISUAL}$1}$0
+endsnippet
+
+# 双下划线
+snippet "\\?uul" "Double Underlined Text, ulem Package Required" r
+\uuline{${VISUAL}$1}$0
+endsnippet
+
+# 波浪线
+snippet "\\?uw" "波浪线, 需要 ulem 包 " r
+\uwave{${VISUAL}$1}$0
+endsnippet
+
+# 删除线
+snippet "\\?dl" "删除线, 需要 ulem 包" r
+\sout{${VISUAL}$1}$0
+endsnippet
+
+# 斜删除线
+snippet "\\?xl" "斜删除线, 需要 ulem 包" r
+\xout{${VISUAL}$1}$0
+endsnippet
+
+# 虚线
+snippet "\\?dashul" "虚线, 需要 ulem 包" r
+\dashuline{${VISUAL}$1}$0
+endsnippet
+
+snippet "\\?dotul" "加点, 需要 ulem 包" r
+\dotuline{${VISUAL}$1}$0
+endsnippet
+
+# 段落居左
+snippet leftp "left aligned paragraph" b
+\begin{flushleft}
+${VISUAL}$0
+\end{flushleft}
+endsnippet
+
+# 段落居右
+snippet rightp "right aligned paragraph" b
+\begin{flushright}
+${VISUAL}$0
+\end{flushright}
+endsnippet
+
+# 段落居中
+snippet centerp "centered paragraph" b
+\begin{center}
+${VISUAL}$0
+\end{center}
+endsnippet
+
+snippet quote "引文,两端都缩进"
+\begin{quote}
+${VISUAL}$0
+\end{quote}
+endsnippet
+
+snippet quotation "引文,两端缩进,首行缩进增加"
+\begin{quotation}
+${VISUAL}$0
+\end{quotation}
+endsnippet
+
+snippet list_enum "Enumerate"
+\begin{enumerate}
+	\item $0
+\end{enumerate}
+endsnippet
+
+snippet list_item "Itemize"
+\begin{itemize}
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet list_desc "Description"
+\begin{description}
+	\item [$1] $0
+\end{description}
+endsnippet
+
+snippet verb "\verb|contents|"
+\verb|${VISUAL}$1|$0
+endsnippet
+
+snippet table "table environment"
+\begin{table}[${1:H}]
+	\centering
+	${2:\caption\{\bf ${3}\}}
+	${4:\label\{${5}\}}
+	gentbl${6:ROWS}x${7:COLS}$0
+\end{table}
+endsnippet
+
+snippet tablen "table environment"
+\begin{table}[${1:H}]
+	\centering
+	gentbl${2:ROWS}x${3:COLS}$0
+\end{table}
+endsnippet
+
+snippet hr "horizontal line" b
+\noindent\rule{\textwidth}{1pt}
+endsnippet
+
+snippet ml "Math Inline"
+$ ${VISUAL}$1 $ $0
+endsnippet
+
+# === }}} CUSTOM SNIPPETS END
+
+# vim:ft=snippets:fdm=marker

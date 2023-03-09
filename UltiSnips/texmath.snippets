@@ -1,0 +1,88 @@
+priority -50
+
+##############
+# MATH STUFF #
+##############
+
+snippet eqnn "Equation without a number" b
+\begin{equation*}
+	${0:${VISUAL}}
+\end{equation*}
+endsnippet
+
+snippet al "Align" b
+\begin{align}
+	${0:${VISUAL}}
+\end{align}
+endsnippet
+
+snippet alnn "Align without a number" b
+\begin{align*}
+	${0:${VISUAL}}
+\end{align*}
+endsnippet
+
+snippet eqa "Equation array" b
+\begin{eqnarray}
+	${1:${VISUAL}} & ${2:${VISUAL}} & ${0:${VISUAL}}
+\end{eqnarray}
+endsnippet
+
+snippet eqann "Equation array without a number" b
+\begin{eqnarray*}
+	${1:${VISUAL}} & ${2:${VISUAL}} & ${0:${VISUAL}}
+\end{eqnarray*}
+endsnippet
+
+#################
+#    SYMBOLS    #
+#################
+snippet mathrm "\mathrm{ }"
+\mathrm{${VISUAL}${1}}$0
+endsnippet
+
+snippet mathcal "\mathcal{ }" b
+\mathcal{${VISUAL}${1}$0
+endsnippet
+
+snippet stackrel "\stackrel{ }{ }"
+\stackrel{${1}}{${VISUAL}${2}}$0
+endsnippet
+
+snippet overl "\overline{ }"
+\overline{${VISUAL}${1}}$0
+endsnippet
+
+snippet cfrac "\cfrac{}{}"
+\cfrac{$1}{$2}$0
+endsnippet
+
+snippet partial "\cfrac{\partial}{\partial}"
+\cfrac{\partial $1}{\partial $2}$0
+endsnippet
+
+snippet sum "\sum\limits"
+\sum\limits_{${1}}^{${2}}$0
+endsnippet
+
+snippet prod "\prod\limits"
+\prod\limits_{${1}}^{${2}}$0
+endsnippet
+
+#################
+# PHYSICS STUFF #
+#################
+
+snippet dv "Derivative" w
+\dv[${1:${VISUAL}}]{${2}}{${3}}
+endsnippet
+
+snippet pdv "Partial Derivative" w
+\pdv[${1:${VISUAL}}]{${2}}{${3}}
+endsnippet
+
+snippet SI "SI-Unit" w
+\SI{${1:${VISUAL}}}{${2}}
+endsnippet
+
+# vim:ft=snippets:
