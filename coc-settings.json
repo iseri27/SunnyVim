@@ -66,9 +66,6 @@
     "translator.window.enableBorder": true,
 	"translator.window.maxHeight": 50,
 
-    "sumneko-lua.enableNvimLuaDev": true,
-    "Lua.telemetry.enable": true,
-
     "explorer.position": "left",
     "explorer.floating.position": "left-center",
 	"explorer.floating.width": -30,
@@ -133,10 +130,6 @@
 			"command": "vala-language-server",
 			"filetypes": ["vala"]
 		},
-		"latex": {
-			"command": "digestif",
-			"filetypes": ["tex", "plaintex", "context"]
-		},
 		"golang": {
 			"command": "gopls",
 			"rootPatterns": ["go.mod"],
@@ -150,6 +143,10 @@
 			"command": "bash-language-server",
 			"args": ["start"],
 			"filetypes": ["sh"]
+		},
+		"lua": {
+			"command": "lua-lsp",
+			"filetypes": ["lua"]
 		}
 	},
 

@@ -34,10 +34,8 @@ let g:coc_global_extensions = [
 	\    'coc-pyright',
 	\    'coc-vimlsp',
 	\    'coc-fish',
-	\    'coc-sumneko-lua',
 	\    'coc-explorer',
 	\    'coc-json',
-	\    'coc-rust-analyzer'
 	\ ]
 
 " vim: nowrap

@@ -1,0 +1,60 @@
+priority -50
+
+snippet sec "= section" b
+= ${1:section}
+$0
+endsnippet
+
+snippet sub "== subsection" b
+== ${1:subsection}
+$0
+endsnippet
+
+snippet ssub "=== subsubsection" b
+=== ${1:subsubsection}
+$0
+endsnippet
+
+snippet par "==== paragraph" b
+==== ${1:paragraph}
+$0
+endsnippet
+
+snippet spar "===== sub paragraph" b
+===== ${1:sub paragraph}
+$0
+endsnippet
+
+snippet sspar "====== sub sub paragraph" b
+====== ${1:sub sub paragraph}
+$0
+endsnippet
+
+snippet bd "bold text"
+**${VISUAL}$1**$0
+endsnippet
+
+snippet it "italic text"
+__${VISUAL}$1__$0
+endsnippet
+
+snippet code "inline code"
+``${VISUAL}$1``$0
+endsnippet
+
+snippet codeblock "code block" b
+[source, ${1:lang}]
+----
+${VISUAL}$0
+----
+endsnippet
+
+snippet qte "quote" b
+____
+${VISUAL}$0
+____
+endsnippet
+
+snippet img "image" b
+image:${VISUAL}${1:url}[${2:description}]$0
+endsnippet

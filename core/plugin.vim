@@ -32,6 +32,7 @@ Plug 'preservim/nerdcommenter'           , { 'commit': 'd069f7fb562fb9eb6911fe23
 Plug 'neoclide/jsonc.vim'                , { 'commit': '6fb92460f9e50505c9b93181a00f27d10c9b383f' }
 Plug 'Corona09/picgo.nvim'               , { 'commit': '6ebc56fd6f47c8a2029942d9684e55d1c4012ab2' }
 Plug 'tribela/vim-transparent'           , { 'commit': '423f93517d4fadff90ff36c28eead723b0db6724' }
+Plug 'marioortizmanero/adoc-pdf-live.nvim'
 
 " ============= For Languages ============
 Plug 'iamcco/markdown-preview.nvim'      , {'commit': '02cc3874738bc0f86e4b91f09b8a0ac88aef8e96', 'do': 'cd app && yarn install', 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
