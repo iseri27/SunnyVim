@@ -18,4 +18,7 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
-nnoremap <Space>' :Deol -split=horizontal -winheight=10<CR>
+function! config#plugin#deol#openTerminal() abort
+	execute "set splitbelow"
+	execute "Deol -split=horizontal -winheight=10"
+endfunction

@@ -41,8 +41,7 @@ Plug 'lvht/tagbar-markdown'                , { 'commit': '265dfc6ed12ec0d40b2156
 Plug 'dag/vim-fish'                        , { 'commit': '50b95cbbcd09c046121367d49039710e9dc9c15f', 'for': ['fish'] }
 Plug 'arrufat/vala.vim'                    , { 'commit': 'ce569e187bf8f9b506692ef08c10b584595f8e2d', 'for': ['vala'] }
 Plug 'leafOfTree/vim-vue-plugin'           , { 'commit': '58ac69b2c8a98a9bd2a95fbaa7b5f0fe806bad0f' }
-Plug 'LnL7/vim-nix'                        , { 'commit': '7d23e97d13c40fcc6d603b291fe9b6e5f92516ee' }
-Plug 'marioortizmanero/adoc-pdf-live.nvim' , { 'commit': '883b3d725410943a8d0239532e714ee2ee91be64' }
+Plug 'Corona09/nvim-typst'
 " ========================================
 
 call color#add('morhetz/gruvbox', 'gruvbox')

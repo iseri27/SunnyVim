@@ -31,7 +31,7 @@
         "interface": "",
         "keyword": " ",
         "method": " ",
-        "module": "",
+        "module": " ",
         "operator": "洛",
         "property": " ",
         "reference": "渚",
@@ -162,5 +162,6 @@
     },
     "hover.floatConfig": {
         "border": true
-    }
+    },
+    "snippets.ultisnips.pythonPrompt": false
 }
