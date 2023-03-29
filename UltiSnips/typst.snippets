@@ -1,0 +1,70 @@
+priority -50
+
+snippet sec "= section" b
+= ${VISUAL}${1:section}
+$0
+endsnippet
+
+snippet sub "== subsection" b
+== ${VISUAL}${1:subsection}
+$0
+endsnippet
+
+snippet ssub "=== subsubsection" b
+=== ${VISUAL}${1:subsubsection}
+$0
+endsnippet
+
+snippet par "==== paragraph" b
+==== ${VISUAL}${1:paragraph}
+$0
+endsnippet
+
+snippet spar "===== sub paragraph" b
+===== ${VISUAL}${1:sub paragraph}
+$0
+endsnippet
+
+snippet sspar "====== sub sub paragraph" b
+====== ${VISUAL}${1:sub sub paragraph}
+$0
+endsnippet
+
+snippet "\\?bd" "bold text" r
+*${VISUAL}$1*$0
+endsnippet
+
+snippet "\\?it" "italic text" r
+_${VISUAL}$1_$0
+endsnippet
+
+snippet "\\?un" "underlined text" r
+#underline[${VISUAL}$1]$0
+endsnippet
+
+snippet image "insert an image" b
+#image("${VISUAL}$1"$2)$0
+endsnippet
+
+snippet figure "insert a figure" b
+#figure(
+	image("${VISUAL}$1"$2),
+	caption: [
+		${3:caption of figure}
+	],
+) <${4:id}>$0
+endsnippet
+
+snippet code_inline "inline code"
+\`${VISUAL}$1\`$0
+endsnippet
+
+snippet code_block "block code" b
+\`\`\`${1:lang}
+${VISUAL}$0
+\`\`\`
+endsnippet
+
+snippet math "math content"
+$${VISUAL}$1$$0
+endsnippet
