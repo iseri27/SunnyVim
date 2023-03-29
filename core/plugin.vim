@@ -40,7 +40,7 @@ Plug 'preservim/vim-markdown'              , { 'commit': '5d3d1b6cbdc4be0b4c6105
 Plug 'lvht/tagbar-markdown'                , { 'commit': '265dfc6ed12ec0d40b2156fb70542ef5657461b2', 'for': ['markdown'] }
 Plug 'dag/vim-fish'                        , { 'commit': '50b95cbbcd09c046121367d49039710e9dc9c15f', 'for': ['fish'] }
 Plug 'arrufat/vala.vim'                    , { 'commit': 'ce569e187bf8f9b506692ef08c10b584595f8e2d', 'for': ['vala'] }
-Plug 'leafOfTree/vim-vue-plugin'           , { 'commit': '58ac69b2c8a98a9bd2a95fbaa7b5f0fe806bad0f' }
+Plug 'Corona09/tagbar-typst'
 Plug 'Corona09/nvim-typst'
 " ========================================
 
