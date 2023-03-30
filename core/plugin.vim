@@ -41,7 +41,7 @@ Plug 'lvht/tagbar-markdown'                , { 'commit': '265dfc6ed12ec0d40b2156
 Plug 'dag/vim-fish'                        , { 'commit': '50b95cbbcd09c046121367d49039710e9dc9c15f', 'for': ['fish'] }
 Plug 'arrufat/vala.vim'                    , { 'commit': 'ce569e187bf8f9b506692ef08c10b584595f8e2d', 'for': ['vala'] }
 Plug 'Corona09/tagbar-typst'
-Plug 'Corona09/nvim-typst'
+Plug 'kaarmu/typst.vim'
 " ========================================
 
 call color#add('morhetz/gruvbox', 'gruvbox')
