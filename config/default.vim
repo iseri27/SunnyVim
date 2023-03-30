@@ -16,6 +16,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,usc-bom,gb18030,gbk,gb2312,cp936
 set showtabline=2
 set noshowmode
+set splitbelow
 
 filetype plugin indent on
 syntax enable
