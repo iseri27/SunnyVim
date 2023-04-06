@@ -31,7 +31,7 @@ $0
 endsnippet
 
 snippet "\\?bd" "bold text" r
-*${VISUAL}$1*$0
+#strong[${VISUAL}$1]$0
 endsnippet
 
 snippet "\\?it" "italic text" r
@@ -67,4 +67,21 @@ endsnippet
 
 snippet math "math content"
 $${VISUAL}$1$$0
+endsnippet
+
+snippet #show "project description" b
+#show: project.with(
+  title: "${1:title}",
+  authors: (
+    (name: "${2:Corona}", email: "${3:your-email@example.com}"),
+  ),${4:
+  abstract: [
+    ${5:abstract content}
+  ],}
+  date: "${6:yyyy/mm/dd}",
+)$0
+endsnippet
+
+snippet #import "import a template" b
+#import "${1:template.typ}": *$0
 endsnippet

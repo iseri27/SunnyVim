@@ -32,15 +32,15 @@ Plug 'preservim/nerdcommenter'             , { 'commit': 'd069f7fb562fb9eb6911fe
 Plug 'neoclide/jsonc.vim'                  , { 'commit': '6fb92460f9e50505c9b93181a00f27d10c9b383f' }
 Plug 'Corona09/picgo.nvim'                 , { 'commit': '6ebc56fd6f47c8a2029942d9684e55d1c4012ab2' }
 Plug 'tribela/vim-transparent'             , { 'commit': '423f93517d4fadff90ff36c28eead723b0db6724' }
+Plug 'andymass/vim-matchup'                , { 'commit': '156367e4cbd123bc9a70eeabeaa16f7cf9239e12' }
 " ============= For Languages ============
 Plug 'iamcco/markdown-preview.nvim'        , { 'commit': '02cc3874738bc0f86e4b91f09b8a0ac88aef8e96', 'do': 'cd app && yarn install', 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
 Plug 'iamcco/mathjax-support-for-mkdp'     , { 'commit': '9565bacf73badaba41ca9449b055b3cc972bad7f', 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
-Plug 'lervag/vimtex'                       , { 'commit': 'e262abf6b96f45c7a1dd18d1037f6e35d311ec0d', 'for': ['bib', 'tex'] }
 Plug 'preservim/vim-markdown'              , { 'commit': '5d3d1b6cbdc4be0b4c6105c1ab1f769d76d3c68f', 'for': ['markdown'] }
 Plug 'lvht/tagbar-markdown'                , { 'commit': '265dfc6ed12ec0d40b2156fb70542ef5657461b2', 'for': ['markdown'] }
+Plug 'lervag/vimtex'                       , { 'commit': 'e262abf6b96f45c7a1dd18d1037f6e35d311ec0d', 'for': ['bib', 'tex'] }
 Plug 'dag/vim-fish'                        , { 'commit': '50b95cbbcd09c046121367d49039710e9dc9c15f', 'for': ['fish'] }
-Plug 'arrufat/vala.vim'                    , { 'commit': 'ce569e187bf8f9b506692ef08c10b584595f8e2d', 'for': ['vala'] }
-Plug 'Corona09/tagbar-typst'
+Plug 'Corona09/tagbar-typst'               , { 'commit': 'f8185ab484ec7c26476d9b1789f8fc2e6c2ee8a4', 'for': ['typst', 'typ'] }
 Plug 'kaarmu/typst.vim'
 " ========================================
 
