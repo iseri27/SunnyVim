@@ -22,8 +22,8 @@ filetype plugin indent on
 syntax enable
 
 "SECTION: 模糊命令
-command! Q q
-command! W w
+command! Q  q
+command! W  w
 command! Wq wq
 command! WQ wq
 command! Wa wa
@@ -37,7 +37,7 @@ nnoremap ww :w<CR>
 nnoremap wq :wq<CR>
 nnoremap Q  :q!<CR>
 nnoremap <C-Q> :q<CR>
-nnoremap <C-W> :w<CR>
+nnoremap <C-W> :wq<CR>
 inoremap <C-W> <ESC>:w<CR>
 inoremap <C-S> <ESC>:w<CR>
 
@@ -62,30 +62,31 @@ vnoremap <C-B> <Left>
 nnoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ? coc#float#scroll(0) : "\<Left>"
 inoremap <C-B> <Left>
 
-"SECTION: 编辑
-inoremap <C-E>: <ESC>A
-inoremap <C-E>: <ESC>I
+inoremap <C-P> <Up>
+inoremap <C-N> <Down>
 
-nnoremap J 5j
-vnoremap J 5j
-nnoremap K 5k
-vnoremap K 5k
-vnoremap U 5k
+" 插入模式下使用 HOME 与 END
+inoremap <C-E> <End>
+inoremap <C-A> <Home>
+
+nnoremap J 10j
+vnoremap J 10j
+nnoremap K 10k
+vnoremap K 10k
+vnoremap U 10k
 
 nnoremap j gj
 vnoremap j gj
 nnoremap k gk
 vnoremap k gk
 vnoremap u gk
-nnoremap H 5h
-vnoremap H 5h
-nnoremap L 5l
-vnoremap L 5l
+nnoremap H 10h
+vnoremap H 10h
+nnoremap L 10l
+vnoremap L 10l
 
-" nnoremap u o<ESC>
-" nnoremap U O<ESC>
 nnoremap u k
-nnoremap U 5k
+nnoremap U 10k
 
 "SECTION: 缩进
 nnoremap < <<_

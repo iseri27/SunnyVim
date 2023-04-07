@@ -233,8 +233,7 @@ snippet something "\something{ }" b
 endsnippet
 
 snippet noi "\noindent" b
-\noindent
-$0
+\noindent$0
 endsnippet
 
 snippet date "\date{}" b
@@ -478,8 +477,18 @@ snippet hr "horizontal line" b
 \noindent\rule{\textwidth}{1pt}
 endsnippet
 
-snippet ml "Math Inline"
+snippet %%% "comment horizontal line" b
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$0
+endsnippet
+
+snippet math_inline "Math Inline"
 $ ${VISUAL}$1 $ $0
+endsnippet
+
+snippet math_block "Math Block" b
+$$
+${VISUAL}$0
+$$
 endsnippet
 
 # === }}} CUSTOM SNIPPETS END
