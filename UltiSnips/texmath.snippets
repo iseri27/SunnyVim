@@ -6,19 +6,29 @@ priority -50
 
 snippet eqnn "Equation without a number" b
 \begin{equation*}
-	${0:${VISUAL}}
+	${VISUAL}$0
 \end{equation*}
 endsnippet
 
 snippet al "Align" b
 \begin{align}
-	${0:${VISUAL}}
+	${VISUAL}$0
 \end{align}
 endsnippet
 
 snippet alnn "Align without a number" b
 \begin{align*}
-	${0:${VISUAL}}
+	${VISUAL}$0
+\end{align*}
+endsnippet
+
+snippet math_inline "Inline Math Content"
+$ ${VISUAL}$1 $$0
+endsnippet
+
+snippet math_block "Block Math Content" b
+begin{align*}
+	${VISUAL}$0
 \end{align*}
 endsnippet
 
@@ -37,6 +47,10 @@ endsnippet
 #################
 #    SYMBOLS    #
 #################
+snippet mathbb "\mathbb { }"
+\mathbb{${VISUAL}$1}$0
+endsnippet
+
 snippet mathrm "\mathrm{ }"
 \mathrm{${VISUAL}${1}}$0
 endsnippet

@@ -37,9 +37,17 @@ with ${1:expr}`!p snip.rv = " as " if t[2] else ""`${2:var}:
 $0
 endsnippet
 
-snippet for "for loop" b
+snippet for_loop "for loop" b
 for ${1:item} in ${2:iterable}:
 	${VISUAL}$0
+endsnippet
+
+snippet list_comp "List Comprehensions"
+[ ${1:x} for $1 in ${2:list} ]$0
+endsnippet
+
+snippet list_comp_if "Conditioned List Comprehensions"
+[ ${1:x} for $1 in ${2:list} if ${3:condition} ]$0
 endsnippet
 
 ##########
@@ -770,6 +778,18 @@ endsnippet
 
 snippet range "range(...)"
 range(${VISUAL}$1)$0
+endsnippet
+
+snippet type "type(...)"
+type(${VISUAL}$1)$0
+endsnippet
+
+snippet list "list(...)"
+list(${VISUAL}$1)$0
+endsnippet
+
+snippet tuple "tuple(...)"
+tuple(${VISUAL}$1)$0
 endsnippet
 
 # vim:ft=snippets:

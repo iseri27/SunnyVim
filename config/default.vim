@@ -53,7 +53,7 @@ nnoremap <leader>P "+P
 nnoremap <leader>d "+dd
 vnoremap <leader>d "+d
 
-"SECTION: 光标移动
+"SECTION: 类 emacs 光标移动
 vnoremap <C-F> <Right>
 nnoremap <silent><nowait><expr> <C-F> coc#float#has_scroll() ? coc#float#scroll(1) : "\<Right>"
 inoremap <C-F> <Right>
@@ -63,11 +63,15 @@ nnoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ? coc#float#scroll(
 inoremap <C-B> <Left>
 
 inoremap <C-P> <Up>
+nnoremap <C-P> <Up>
+vnoremap <C-P> <Up>
 inoremap <C-N> <Down>
+nnoremap <C-N> <Down>
+vnoremap <C-N> <Down>
 
-" 插入模式下使用 HOME 与 END
 inoremap <C-E> <End>
 inoremap <C-A> <Home>
+
 
 nnoremap J 10j
 vnoremap J 10j
