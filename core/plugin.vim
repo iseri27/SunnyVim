@@ -41,6 +41,7 @@ Plug 'lvht/tagbar-markdown'                , { 'commit': '265dfc6ed12ec0d40b2156
 Plug 'lervag/vimtex'                       , { 'commit': 'e262abf6b96f45c7a1dd18d1037f6e35d311ec0d', 'for': ['bib', 'tex'] }
 Plug 'dag/vim-fish'                        , { 'commit': '50b95cbbcd09c046121367d49039710e9dc9c15f', 'for': ['fish'] }
 Plug 'Corona09/tagbar-typst'               , { 'commit': 'f8185ab484ec7c26476d9b1789f8fc2e6c2ee8a4', 'for': ['typst', 'typ'] }
+Plug 'numirias/semshi'                     , { 'commit': '252f07fd5f0ae9eb19d02bae979fd7c9152c1ccf', 'do': 'UpdateRemotePlugins'}
 Plug 'kaarmu/typst.vim'
 " ========================================
 
