@@ -18,7 +18,6 @@ Plug 'lilydjwg/colorizer'                  , { 'commit': '72790a003d5a706c287486
 Plug 'simnalamburt/vim-mundo'              , { 'commit': 'b53d35fb5ca9923302b9ef29e618ab2db4cc675e', 'on': ['MundoShow', 'MundoToggle'] }
 Plug 'preservim/tagbar'                    , { 'commit': 'af3ce7c3cec81f2852bdb0a0651d2485fcd01214', 'on': ['TagbarToggle'] }
 Plug 'Shougo/deol.nvim'                    , { 'commit': '50a9e70da17020af11562d6eb07b310f106c4ecf' }
-Plug 'frazrepo/vim-rainbow'                , { 'commit': 'a6c7fd5a2b0193b5dbd03f62ad820b521dea3290' }
 Plug 'itchyny/lightline.vim'               , { 'commit': 'b1e91b41f5028d65fa3d31a425ff21591d5d957f' }
 Plug 'mengelbrecht/lightline-bufferline'   , { 'commit': 'c0199a7027da92d9770d1e2a9f4bf6257c7ec7ef' }
 Plug 'liuchengxu/vim-which-key'            , { 'commit': 'c0eb7a63e80ed0dc2c91eb8c879b7396a795f775' }
@@ -33,6 +32,7 @@ Plug 'neoclide/jsonc.vim'                  , { 'commit': '6fb92460f9e50505c9b931
 Plug 'Corona09/picgo.nvim'                 , { 'commit': '6ebc56fd6f47c8a2029942d9684e55d1c4012ab2' }
 Plug 'tribela/vim-transparent'             , { 'commit': '423f93517d4fadff90ff36c28eead723b0db6724' }
 Plug 'andymass/vim-matchup'                , { 'commit': '156367e4cbd123bc9a70eeabeaa16f7cf9239e12' }
+Plug 'jiangmiao/auto-pairs'                , { 'commit': '39f06b873a8449af8ff6a3eee716d3da14d63a76' }
 " ============= For Languages ============
 Plug 'iamcco/markdown-preview.nvim'        , { 'commit': '02cc3874738bc0f86e4b91f09b8a0ac88aef8e96', 'do': 'cd app && yarn install', 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
 Plug 'iamcco/mathjax-support-for-mkdp'     , { 'commit': '9565bacf73badaba41ca9449b055b3cc972bad7f', 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
