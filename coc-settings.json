@@ -67,6 +67,7 @@
     "explorer.position": "left",
     "explorer.floating.position": "left-center",
 	"explorer.floating.width": -30,
+	"explorer.icon.enableNerdfont": true,
     "explorer.root.strategies": [
         "workspace",
         "cwd",
@@ -128,7 +129,7 @@
 			"command": "bash-language-server",
 			"args": ["start"],
 			"filetypes": ["sh"]
-		},
+		}
 	},
 
 
