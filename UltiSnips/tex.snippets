@@ -49,15 +49,25 @@ endglobal
 
 
 snippet begin "\begin{} / \end{}" b
-\begin{${1:something}}
+\begin{${1:something}}$2
 	${VISUAL}$0
 \end{$1}
 endsnippet
 
 snippet "\\?begin" "\begin{} / \end{}" br
-\begin{${1:something}}
+\begin{${1:something}}$2
 	${VISUAL}$0
 \end{$1}
+endsnippet
+
+snippet minipage "minipage"
+\begin{minipage}{${1:4cm}}
+	${VISUAL}$0
+\end{minipage}
+endsnippet
+
+snippet centering "\centering"
+\centering
 endsnippet
 
 snippet abs "abstract environment" b
