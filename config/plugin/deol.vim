@@ -18,6 +18,17 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
-function! config#plugin#deol#openTerminal() abort
-	execute "Deol -split=horizontal -winheight=10"
-endfunction
+" 在退出 shell 后自动关闭 buffer
+augroup terminal_settings
+    autocmd!
+
+    autocmd BufWinEnter,WinEnter term://* startinsert
+    autocmd BufLeave term://* stopinsert
+
+    " Ignore various filetypes as those will close terminal automatically
+    " Ignore fzf, ranger, coc
+    autocmd TermClose term://*
+          \ if (expand('<afile>') !~ "fzf") && (expand('<afile>') !~ "ranger") && (expand('<afile>') !~ "coc") |
+          \   call nvim_input('<CR>')  |
+          \ endif
+augroup END

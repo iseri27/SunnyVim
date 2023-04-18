@@ -1,4 +1,4 @@
 let g:which_key_map["'"] = [
-		\ ':call config#plugin#deol#openTerminal()',
+		\ ':Deol -split=horizontal -winheight=10',
 		\ 'Deol'
 	    \ ]
