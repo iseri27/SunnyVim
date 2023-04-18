@@ -1,12 +1,12 @@
 function! config#lang#c#Compile() abort
 	execute "w"
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal gcc % -std=c11 -g -DDEBUG -Wall -lm -o %<.exe
 endfunction
 
 function! config#lang#c#Run() abort
 	execute "w"
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal ./%<.exe
 endfunction
 

@@ -1,11 +1,11 @@
 function! config#lang#rust#Compile() abort
 	execute "w"
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal rustc % -o %<.exe
 endfunction
 
 function! config#lang#rust#Run() abort
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal ./%.exe
 endfunction
 

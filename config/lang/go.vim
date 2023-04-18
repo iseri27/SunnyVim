@@ -1,11 +1,11 @@
 function! config#lang#go#Build() abort
 	execute "w"
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal go build ./%
 endfunction
 
 function! config#lang#go#Run() abort
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal go run ./%
 endfunction
 

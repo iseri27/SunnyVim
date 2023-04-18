@@ -1,11 +1,11 @@
 function! config#lang#ts#Compile() abort
 	execute "w"
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal tsc %
 endfunction
 
 function! config#lang#ts#Run() abort
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal node ./%<.js
 endfunction
 

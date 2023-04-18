@@ -1,11 +1,10 @@
-" Get file path {{{
+" Get file path 
 function! utils#GetPath() abort
 	let l:config_dir = fnamemodify(expand('<sfile>'), ':h')
 	return l:config_dir
 endfunction
-" }}}
 
-" Load Files {{{
+" Load Files 
 " path: absolute path, all *.vim files in path and its subdirs will be loaded.
 function! utils#InitFiles(path) abort
 	let l:dirs = s:get_all_dirs(a:path)
@@ -20,15 +19,13 @@ function! utils#InitFiles(path) abort
 		endfor
 	endfor
 endfunction
-" }}}
 
-" Load File {{{
+" Load File 
 function! utils#InitFile(path) abort
 	execute 'source' a:path
 endfunction
-" }}}
 
-" Add a keybinding group {{{
+" Add a keybinding group 
 " lt: key prefix list
 " description: key group description
 function! utils#AddKeyGroup(lt, description) abort
@@ -48,9 +45,9 @@ function! utils#AddKeyGroup(lt, description) abort
 
 	call add(g:global_key_map_list, l:prefix . a:lt[l:llen-1])
 endfunction
-"}}}
 
-" Add a keybinding {{{
+
+" Add a keybinding 
 " mode: mode to be maped such as 'n', 'vnore'...
 " lt: key list
 " action: actions to be maped
@@ -91,9 +88,9 @@ function! utils#AddKey(mode, lt, action, description) abort
 	endfor
 
 endfunction
-"}}}
 
-" Add a keybinding group for a certain lang {{{
+
+" Add a keybinding group for a certain lang 
 " ft: filetype, value of ':echo &filetype'
 function! utils#AddKeyGroupForLang(ft, lt, description) abort
 	if !has_key(g:lang_key_map_lists, a:ft)
@@ -110,9 +107,9 @@ function! utils#AddKeyGroupForLang(ft, lt, description) abort
 
 	call add(g:lang_key_map_lists[a:ft], l:prefix . a:lt[l:llen-1])
 endfunction
-"}}}
 
-" Add a keybinding for a certain lang {{{
+
+" Add a keybinding for a certain lang 
 function! utils#AddKeyForLang(ft, mode, lt, action, description) abort
 	if !has_key(g:lang_key_map_lists, a:ft)
 		let g:lang_key_map_lists[a:ft] = []
@@ -146,18 +143,29 @@ function! utils#AddKeyForLang(ft, mode, lt, action, description) abort
 	endfor
 	
 endfunction
-"}}}
 
-" When leave insert mode, auto toggle fcitx5 to english {{{
+
+" When leave insert mode, auto toggle fcitx5 to english 
 function! utils#Fcitx2en() abort
-   let l:input_status = system("fcitx5-remote")
-   if l:input_status == 2
-      let l:a = system("fcitx5-remote -t")
-   endif
+	let l:input_status = system("fcitx5-remote")
+	if l:input_status == 2
+		let g:previous_fcitx5_status = 2
+		let l:a = system("fcitx5-remote -t")
+	else
+		let g:previous_fcitx5_status = 0
+	endif
 endfunction
-"}}}
 
-" Plugin: COC {{{
+
+function! utils#Fcitx2zh() abort
+	let l:input_status = system("fcitx5-remote")
+	if g:previous_fcitx5_status == 2
+		let l:a = system("fcitx5-remote -o")
+	endif
+endfunction
+
+
+" Plugin: COC 
 function! utils#PlugCocShowDoc() abort
     if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
@@ -167,9 +175,9 @@ function! utils#PlugCocShowDoc() abort
         execute '!' . &keywordprg . " " . expand('<cword>')
     endif
 endfunction
-"}}}
 
-" Close Current Buffer: {{{
+
+" Close Current Buffer: 
 function! utils#Close_current_buffer(...) abort
 	let buffers = get(g:, '_spacevim_list_buffers', [])
 	let bn = bufnr('%')
@@ -238,9 +246,9 @@ function! utils#Close_current_buffer(...) abort
 		endif
 	endif
 endfunction
-"}}}
 
-" Edit: toggle letter case {{{
+
+" Edit: toggle letter case 
 function! s:toggle_case(visual, uppercase) abort
     if a:visual
         if a:uppercase == 1
@@ -260,18 +268,17 @@ function! s:toggle_case(visual, uppercase) abort
         endif
     endif
 endfunction
-"}}}
 
-" Case Related Maps {{{
+
+" Case Related Maps 
 nnoremap <silent> <Plug>Lowercase  :call <SID>toggle_case(0, -1)<CR>
 vnoremap <silent> <Plug>Lowercase  :call <SID>toggle_case(1, -1)<CR>
 nnoremap <silent> <Plug>Uppercase  :call <SID>toggle_case(0, 1)<CR>
 vnoremap <silent> <Plug>Uppercase  :call <SID>toggle_case(1, 1)<CR>
 nnoremap <silent> <Plug>ToggleCase :call <SID>toggle_case(0, 0)<CR>
 vnoremap <silent> <Plug>ToggleCase :call <SID>toggle_case(1, 0)<CR>
-" }}}
 
-" Join (n-1) elements of a list {{{
+" Join (n-1) elements of a list 
 function! s:get_prefix_by_list(lt) abort
 	let l:llen = len(a:lt)
 	if l:llen <= 1
@@ -280,9 +287,9 @@ function! s:get_prefix_by_list(lt) abort
 		return join(a:lt[:-2], '')
 	endif
 endfunction
-"}}}
 
-" Get all subdirs of a dir {{{
+
+" Get all subdirs of a dir 
 function! s:get_all_dirs(path) abort
 	let l:dir = globpath(a:path, '*', 0, 1)
 	call filter(l:dir, 'isdirectory(v:val)')
@@ -295,13 +302,31 @@ function! s:get_all_dirs(path) abort
 
 	return l:dir
 endfunction
-" }}}
 
-" Get Random Number{{{
+" Get Random Number
 function! utils#RandNumber() abort
 	let l:n = str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
 	" let l:n = str2nr(system("bash -c 'echo $RANDOM'"))
 	return l:n
 endfunction
-"}}}
+
+function! utils#ExecWhenOpenEmpty() abort
+	if @% == ""
+		" No filename for current buffer
+		execute ":CocCommand explorer"
+	elseif filereadable(@%) == 0
+		" File doesn't exist yet
+		execute ":CocCommand explorer"
+	elseif line('$') == 1 && col('$') == 1
+		" File is empty
+		execute ":CocCommand explorer"
+	endif
+endfunction
+
+function! utils#open_buffer_below() abort
+	:set splitbelow
+	:sp
+	:resize -5
+endfunction
+
 " vim:nowrap

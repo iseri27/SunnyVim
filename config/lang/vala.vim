@@ -1,11 +1,11 @@
 function! config#lang#vala#Compile() abort
 	execute "w"
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal valac % -o %<.exe -x -lm -X -w
 endfunction
 
 function! config#lang#vala#Run() abort
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal ./%.exe
 endfunction
 

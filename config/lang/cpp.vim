@@ -1,11 +1,11 @@
 function! config#lang#cpp#Compile() abort
 	execute "w"
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal g++ % -std=c++11 -g -DDEBUG -Wall -o %<.exe
 endfunction
 
 function! config#lang#cpp#Run() abort
-	call config#core#open_buffer_below()
+	call utils#open_buffer_below()
 	terminal ./%<.exe
 endfunction
 
