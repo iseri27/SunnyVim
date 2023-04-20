@@ -19,12 +19,14 @@ let g:vimtex_compiler_latexmk = {
 
 " Ignore noisy warnings, meizizi😋
 let g:vimtex_quickfix_ignore_filters = [
-		\     'Package fontspec Warning',
-		\     'Package hyperref Warning',
 		\     'Underfull',
 		\     'Overfull',
-		\     'LaTeX Warning: You have requested document',
-		\     'Package biblatex Warning: Using fall-back BibTeX(8) backend'
+		\     'LaTeX Warning',
+		\     'Package fontspec Warning',
+		\     'Package hyperref Warning',
+		\     'Package biblatex Warning',
+		\     'Package ctex Warning',
+		\     'Package inputenc Warning',
 		\]
 
 let g:vimtex_mappings_enabled = 0
