@@ -89,8 +89,9 @@ vnoremap H 10h
 nnoremap L 10l
 vnoremap L 10l
 
-nnoremap u k
-nnoremap U 10k
+" normal 模式下 u/U 插入空白行
+nnoremap u o<ESC>d$
+nnoremap U O<ESC>d$j
 
 "SECTION: 缩进
 nnoremap < <<_

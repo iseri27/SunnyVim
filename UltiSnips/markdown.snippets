@@ -108,32 +108,26 @@ endsnippet
 ###########################
 snippet sec "Section" b
 # ${1:Section Name}
-$0
 endsnippet
 
 snippet sub "Sub Section" b
 ## ${1:Section Name}
-$0
 endsnippet
 
 snippet ssub "SubSub Section" b
 ### ${1:Section Name}
-$0
 endsnippet
 
 snippet par "Paragraph" b
 #### ${1:Paragraph Name}
-$0
 endsnippet
 
 snippet spar "Sub Paragraph" b
 ##### ${1:Paragraph Name}
-$0
 endsnippet
 
 snippet sspar "Sub Sub Paragraph" b
 ###### ${1:Paragraph Name}
-$0
 endsnippet
 
 ################
@@ -144,7 +138,7 @@ snippet link "Link to something"
 endsnippet
 
 snippet img "Image"
-![${1:pic alt}](${2:path}${3/.+/ "/}${3:opt title}${3/.+/"/})$0
+![$1](${VISUAL}$2)$0
 endsnippet
 
 snippet codeinline "Inline Code" i
