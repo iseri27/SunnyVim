@@ -67,7 +67,7 @@
     "explorer.position": "left",
     "explorer.floating.position": "left-center",
 	"explorer.floating.width": -30,
-	"explorer.icon.enableNerdfont": true,
+	"explorer.width": 30,
     "explorer.root.strategies": [
         "workspace",
         "cwd",
@@ -108,6 +108,9 @@
 		"<BS>": ["wait", "gotoParent"],
 		".": "toggleHidden"
 	},
+	"explorer.icon.enableNerdfont": true,
+	"explorer.icon.expanded": "",
+	"explorer.icon.collapsed": "",
 
 	"languageserver": {
 		"clangd": {

@@ -98,9 +98,10 @@ xnoremap < <gv
 nnoremap > >>_
 xnoremap > >gv
 
-" nnoremap dd "_dd
 nnoremap s  "_s
 vnoremap O  "_s
 vnoremap <Backspace> "_x
+inoremap <C-D> <ESC>"_ddI
+nnoremap <C-D> "_dd
 
-" vim: nowrap
+"vim: nowrap
