@@ -146,42 +146,6 @@ snippet ssub* "Subsubsection*"
 ${0}
 endsnippet
 
-snippet secf "Section with fold"
-\section{${1:${VISUAL:section name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet secf* "Section* with fold"
-\section*{${1:${VISUAL:section name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet subf "Subsection with fold"
-\subsection{${1:${VISUAL:subsection name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet subf* "Subsection* with fold"
-\subsection*{${1:${VISUAL:subsection name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet ssubf "Subsubsection with fold"
-\subsubsection{${1:${VISUAL:subsubsection name}}} %{{{
-$0
-%}}}
-endsnippet
-
-snippet ssubf* "Subsubsection* with fold"
-\subsubsection*{${1:${VISUAL:subsubsection name}}} %{{{
-$0
-%}}}
-endsnippet
-
 snippet par "Paragraph"
 \par$0
 endsnippet
@@ -193,10 +157,6 @@ endsnippet
 
 snippet pac "Package" b
 \usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
-endsnippet
-
-snippet lp "Long parenthesis"
-\left(${1:${VISUAL:contents}}\right)$0
 endsnippet
 
 snippet "mint(ed)?( (\S+))?" "Minted code typeset" br

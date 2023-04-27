@@ -1,19 +1,28 @@
 {
+    "codeLens.enable": true,
+
+    "coc.preferences.extensionUpdateCheck": "never",
+    "coc.preferences.messageLevel": "warning",
+    "coc.source.vimtex.filetypes": [
+        "latex"
+    ],
+
+    "signature.floatConfig": {
+        "border": true
+    },
+
+    "hover.floatConfig": {
+        "border": true
+    },
+
 	"suggest.noselect": true,
     "suggest.labelMaxLength": 50,
     "suggest.defaultSortMethod": "length",
     "suggest.enablePreselect": false,
     "suggest.detailField": "preview",
-
-    "codeLens.enable": true,
-
-    "coc.preferences.extensionUpdateCheck": "never",
-    "coc.preferences.messageLevel": "warning",
-
-    "coc.source.vimtex.filetypes": [
-        "latex"
-    ],
-
+    "suggest.floatConfig": {
+        "border": true
+    },
     "suggest.completionItemKindLabels": {
         "class": " ",
         "color": " ",
@@ -42,6 +51,7 @@
         "variable": " "
     },
 
+    "snippets.ultisnips.pythonPrompt": false,
     "snippets.ultisnips.directories": [
         "UltiSnips"
     ],
@@ -50,19 +60,21 @@
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
     "diagnostic.hintSign": "",
-
     "diagnostic.displayByAle": false,
     "diagnostic.refreshOnInsertMode": false,
     "diagnostic.checkCurrentLine": true,
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": false,
+    "diagnostic.floatConfig": {
+        "border": true
+    },
 
-    "translator.engines": [
-        "youdao"
-    ],
     "translator.enableHover": true,
     "translator.window.enableBorder": true,
 	"translator.window.maxHeight": 50,
+    "translator.engines": [
+        "youdao"
+    ],
 
     "explorer.position": "left",
     "explorer.floating.position": "left-center",
@@ -135,18 +147,4 @@
 		}
 	},
 
-
-    "suggest.floatConfig": {
-        "border": true
-    },
-    "diagnostic.floatConfig": {
-        "border": true
-    },
-    "signature.floatConfig": {
-        "border": true
-    },
-    "hover.floatConfig": {
-        "border": true
-    },
-    "snippets.ultisnips.pythonPrompt": false
 }
