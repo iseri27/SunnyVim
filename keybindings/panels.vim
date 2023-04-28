@@ -6,3 +6,7 @@ call utils#AddKeyGroup([g:leader_key_custom], '*Panels')
 call utils#AddKey(['nnore'], [g:leader_key_custom, 'f'], ':CocCommand explorer<CR>', 'File Tree')
 call utils#AddKey(['nnore'], [g:leader_key_custom, 't'], ':TagbarToggle <CR>', 'Tagbar')
 call utils#AddKey(['nnore'], [g:leader_key_custom, 'u'], ':MundoToggle <CR>', 'History')
+
+nnoremap tf :CocCommand explorer<CR>
+nnoremap tt :TagbarToggle<CR>
+nnoremap tu :MundoToggle<CR>
