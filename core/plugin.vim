@@ -32,7 +32,6 @@ Plug 'neoclide/jsonc.vim'                  , { 'commit': '6fb92460f9e50505c9b931
 Plug 'Corona09/picgo.nvim'                 , { 'commit': '6ebc56fd6f47c8a2029942d9684e55d1c4012ab2' }
 Plug 'tribela/vim-transparent'             , { 'commit': '423f93517d4fadff90ff36c28eead723b0db6724' }
 Plug 'andymass/vim-matchup'                , { 'commit': '156367e4cbd123bc9a70eeabeaa16f7cf9239e12' }
-Plug 'jiangmiao/auto-pairs'                , { 'commit': '39f06b873a8449af8ff6a3eee716d3da14d63a76' }
 " ============= For Languages ============
 Plug 'iamcco/markdown-preview.nvim'        , { 'commit': '02cc3874738bc0f86e4b91f09b8a0ac88aef8e96', 'do': 'cd app && yarn install', 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
 Plug 'iamcco/mathjax-support-for-mkdp'     , { 'commit': '9565bacf73badaba41ca9449b055b3cc972bad7f', 'for': ['markdown', 'pandoc.markdown', 'rmd'] }
