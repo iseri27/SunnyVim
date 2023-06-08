@@ -36,7 +36,6 @@ nnoremap <C-S> :w<CR>
 nnoremap ww :w<CR>
 nnoremap wq :wq<CR>
 nnoremap Q  :q!<CR>
-nnoremap <C-Q> :q<CR>
 nnoremap <C-W> :wq<CR>
 inoremap <C-W> <ESC>:w<CR>
 inoremap <C-S> <ESC>:w<CR>
