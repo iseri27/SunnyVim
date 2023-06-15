@@ -9,6 +9,7 @@ let g:tagbar_iconchars = ['', '']
 autocmd FileType bib let g:tagbar_type_bib = {
 									\     'ctagstype' : 'bib',
 									\     'kinds'     : [
+									\         's:String',
 									\         'a:Articles',
 									\         'b:Books',
 									\         'L:Booklets',
