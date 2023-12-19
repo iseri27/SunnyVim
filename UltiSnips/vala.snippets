@@ -1,0 +1,94 @@
+priority -50
+
+snippet for "for (; ; ) { }" b
+for ($1; $2; $3) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet foreach "foreach (var i in iter) { }" b
+foreach (${1:var} ${2:i} in ${3:iter}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet if "if () {}"
+if ($1) {
+	${VISUAL}$2
+}$0
+endsnippet
+
+snippet elseif "else if () { }"
+else if ($1) {
+	${VISUAL}$2
+}$0
+endsnippet
+
+snippet else "else { }"
+else {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet class "create class"
+${1:public} class ${2:class_name} : ${3:parent_class} {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet struct "create struct"
+${1:public} struct ${2:struct_name} {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet try "try-catch" b
+try {
+	${VISUAL}$0
+} catch (${1:Error} e) {
+	print ("%s\n", e.message);
+}
+endsnippet
+
+snippet main "int main() { }" b
+int main() {
+	${VISUAL}$0
+	return 0;
+}
+endsnippet
+
+snippet mains "int main(string[] argv)" b
+int main(string[] argv) {
+	${VISUAL}$0
+	reutrn 0;
+}
+endsnippet
+
+snippet cmain "static main method for class" b
+${1:public} static int main(string[] argv) {
+	${VISUAL}$0
+	return 0;
+}
+endsnippet
+
+snippet description "description for property" b
+[Description(nick = "${1:short_description}", blurb = "${2:long_description}")]$0
+endsnippet
+
+snippet ccode_notify "CCode with notify" b
+[CCode (notify = ${1:false})]$0
+endsnippet
+
+snippet property "property with getter and setter" b
+public ${1:type} ${2:property} {
+	get { return this._$2; }
+	set { this._$2 = value; }
+}$0
+endsnippet
+
+snippet getter_and_setter "property with getter and setter" b
+public ${1:type} ${2:property} {
+	get { return this._$2; }
+	set { this._$2 = value; }
+}$0
+endsnippet

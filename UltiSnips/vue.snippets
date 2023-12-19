@@ -1,0 +1,31 @@
+extends html
+
+snippet /** "Comment" b
+/**
+ * ${VISUAL}$0
+ */
+endsnippet
+
+snippet if "if () "
+if ($1) {
+	${VISUAL}$2
+}$0
+endsnippet
+
+snippet elseif "else if () { }"
+else if ($1) {
+	${VISUAL}$2
+}$0
+endsnippet
+
+snippet else "else { }"
+else {
+	${VISUAL}$1
+}$0
+endsnippet
+
+snippet fori "for ( ; ; ) { }"
+for ($1; $2; $3) {
+	${VISUAL}$0
+}
+endsnippet

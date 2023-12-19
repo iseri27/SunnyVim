@@ -1,0 +1,220 @@
+priority -50
+
+# global !p
+# # A overkill(dirty) table with automatic alignment feature
+# def create_table(snip):
+# 	# retrieving single line from current string and treat it like tabstops count
+# 	placeholders_string = snip.buffer[snip.line].strip()
+# 	rows_amount = int(placeholders_string[0])
+# 	columns_amount = int(placeholders_string[1])
+# 
+# 	prefix_str = "from vimsnippets import display_width;"
+# 
+# 	# erase current line
+# 	snip.buffer[snip.line] = ""
+# 
+# 	# create anonymous snippet with expected content and number of tabstops
+# 	anon_snippet_title = "| "
+# 	anon_snippet_delimiter = "|"
+# 	for col in range(1, columns_amount+1):
+# 		sync_rows = [x*columns_amount+col for x in range(rows_amount+1)]
+# 		sync_str = ",".join(["t[{0}]".format(x) for x in sync_rows])
+# 		max_width_str = "max(list(map(display_width, [" + sync_str + "])))"
+# 		cur_width_str = "display_width(t[" + str(col) + "])"
+# 		rv_val = "(" + max_width_str + "-" + cur_width_str + ")*' '"
+# 		anon_snippet_title += "${" + str(col)  + ":head" + str(col)\
+# 			+ "}`!p " + prefix_str + "snip.rv=" + rv_val + "` | "
+# 		anon_snippet_delimiter += ":`!p " + prefix_str + "snip.rv = "\
+# 			+ max_width_str + "*'-'" + "`-|"
+# 
+# 	anon_snippet_title += "\n"
+# 
+# 	anon_snippet_delimiter += "\n"
+# 	anon_snippet_body = ""
+# 	for row in range(1, rows_amount+1):
+# 		body_row = "| "
+# 		for col in range(1, columns_amount+1):
+# 			sync_rows = [x*columns_amount+col for x in range(rows_amount+1)]
+# 			sync_str = ",".join(["t[{0}]".format(x) for x in sync_rows])
+# 			max_width_str = "max(list(map(display_width, [" + sync_str + "])))"
+# 			cur_width_str = "display_width(t[" + str(row*columns_amount+col) + "])"
+# 			rv_val = "(" + max_width_str + "-" + cur_width_str + ")*' '"
+# 			placeholder = "R{0}C{1}".format(row, col)
+# 			body_row += "${" + str(row*columns_amount+col)  + ":" + placeholder\
+# 				+ "}`!p " + prefix_str + "snip.rv=" + rv_val + "` | "
+# 
+# 		body_row += "\n"
+# 		anon_snippet_body += body_row
+# 
+# 	anon_snippet_table = anon_snippet_title + anon_snippet_delimiter + anon_snippet_body
+# 
+# 	# expand anonymous snippet
+# 	snip.expand_anon(anon_snippet_table)
+# endglobal
+
+###########################
+#     Custom Snippets     #
+###########################
+snippet math_block "Math Block" b
+$$
+$0
+$$
+endsnippet
+
+snippet math_inline "Math Inline"
+$$1$$0
+endsnippet
+
+snippet fold "Markdown Fold"
+<!--{{{-->
+${VISUAL}$0
+<!--}}}-->
+endsnippet
+
+snippet fold_begin "<!--{{{-->"
+<!--{{{-->${VISUAL}$0
+endsnippet
+
+snippet fold_end "<!--}}}-->"
+<!--}}}-->
+endsnippet
+
+snippet title "<center>title</center>" b
+<center><font size="${2:10px}">${1:title}</font></center>
+$0
+endsnippet
+
+snippet fig "<center><img /><center/>"
+<center>
+	<img
+		src="${VISUAL}${1}"
+		${2:width}="${3:70%}"
+	/>
+</center>
+${4:<center><b>${5:Caption}</b></center>}$0
+endsnippet
+
+snippet hr "-------------" b
+-----------
+endsnippet
+
+snippet hr_emoji "emoji horizontal line" b
+:P :D :\$ :* :@ :/ :| :o :s :) :(
+${VISUAL}$0
+endsnippet
+
+###########################
+# Sections and Paragraphs #
+###########################
+snippet sec "Section" b
+# ${1:Section Name}
+endsnippet
+
+snippet sub "Sub Section" b
+## ${1:Section Name}
+endsnippet
+
+snippet ssub "SubSub Section" b
+### ${1:Section Name}
+endsnippet
+
+snippet par "Paragraph" b
+#### ${1:Paragraph Name}
+endsnippet
+
+snippet spar "Sub Paragraph" b
+##### ${1:Paragraph Name}
+endsnippet
+
+snippet sspar "Sub Sub Paragraph" b
+###### ${1:Paragraph Name}
+endsnippet
+
+################
+# Common stuff #
+################
+snippet link "Link to something"
+[${VISUAL:Text}${1}](${2})$0
+endsnippet
+
+snippet img "Image"
+![$1](${VISUAL}$2)$0
+endsnippet
+
+snippet codeinline "Inline Code" i
+\`${VISUAL}${1}\`$0
+endsnippet
+
+snippet code "Codeblock"
+\`\`\`${1:language}
+${2:${VISUAL}}
+\`\`\`
+$0
+endsnippet
+
+snippet refl "Reference Link"
+[${1:${VISUAL:Text}}][${2:id}]$0
+
+[$2]:${4:https://${3:www.url.com}} "${5:$4}"
+endsnippet
+
+snippet fnt "Footnote"
+[^${1:${VISUAL:Footnote}}]$0
+
+[^$1]:${2:Text}
+endsnippet
+
+snippet detail "Disclosure"
+<details ${3:close}>
+	${1:<summary>${2}</summary>}$0
+</details>
+endsnippet
+
+snippet caption "Centered Caption" b
+<center><b> ${VISUAL}${1} </b></center>
+endsnippet
+
+snippet "\\?it" "Italic Text" r
+<i>${VISUAL}${1}</i>$0
+endsnippet
+
+snippet "\\?bd" "Bold Text" r
+<b>${VISUAL}${1}</b>$0
+endsnippet
+
+snippet "\\?bi" "Bold Italic Text" r
+<i><b>${VISUAL}${1}</b></i>$0
+endsnippet
+
+snippet "\\?ul" "Underlined Text" r
+<u>${VISUAL}${1}</u>$0
+endsnippet
+
+snippet "\\?dl" "Delete Lined Text" r
+<s>${VISUAL}${1}</s>$0
+endsnippet
+
+snippet centerp "centered text"
+<center>
+${VISUAL}$1
+</center>
+$0
+endsnippet
+
+snippet /* "Comment"
+<!-- ${VISUAL}${1} -->$0
+endsnippet
+
+snippet "\\?brace" "\left( \right)" r
+\left( ${VISUAL}$1 \right)$0
+endsnippet
+
+snippet "\\?cfrac" "\cfrac{}{}" r
+\cfrac{$1}{$2}$0
+endsnippet
+
+snippet "\\?text" "\text{}" r
+\text{${VISUAL}$1}$0
+endsnippet
+
+# vim:ft=snippets:
