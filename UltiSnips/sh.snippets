@@ -96,4 +96,17 @@ ${1:function} () {
 }
 endsnippet
 
+snippet read_args "read args" b
+while [ $# -gt 0 ]; do
+	case "\$1" in
+		$2)
+			$3
+			;;
+		*)
+			$0
+			;;
+	esac
+done
+endsnippet
+
 # vim:ft=snippets:

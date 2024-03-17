@@ -797,4 +797,17 @@ snippet tuple "tuple(...)"
 tuple(${VISUAL}$1)$0
 endsnippet
 
+snippet parse_args "parse args" b
+def parse_args():
+	parser = argparse.ArgumentParser(descripion="$1")
+	parser.add_argument($2)
+	$0
+	args = parser.parse_args()
+	return args
+endsnippet
+
+snippet add_argument "add an argument" b
+${1:parser}.add_argument($2)$0
+endsnippet
+
 # vim:ft=snippets:
