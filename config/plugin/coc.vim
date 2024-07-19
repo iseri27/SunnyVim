@@ -24,18 +24,37 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" " COC Extensions List
+" let g:coc_global_extensions = [
+"	\    'coc-marketplace',
+"	\    'coc-snippets',
+"	\    'coc-translator',
+"	\    'coc-vimtex',
+"	\    'coc-tsserver',
+"	\    'coc-pyright',
+"	\    'coc-vimlsp',
+"	\    'coc-sh',
+"	\    'coc-fish',
+"	\    'coc-sumneko-lua',
+"	\    'coc-explorer',
+"	\    'coc-json',
+"	\    'coc-rust-analyzer'
+"	\ ]
+
 " COC Extensions List
 let g:coc_global_extensions = [
 	\    'coc-marketplace',
 	\    'coc-snippets',
 	\    'coc-translator',
-	\    'coc-vimtex',
-	\    'coc-tsserver',
 	\    'coc-pyright',
 	\    'coc-vimlsp',
 	\    'coc-fish',
 	\    'coc-explorer',
 	\    'coc-json',
+	\    'coc-sh',
+	\    'coc-explorer',
+	\    'coc-json',
+    \    'coc-clangd',
 	\ ]
 
 " vim: nowrap

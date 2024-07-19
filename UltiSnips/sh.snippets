@@ -3,6 +3,11 @@ priority -50
 ###########################################################################
 #                            TextMate Snippets                            #
 ###########################################################################
+snippet shebang "#!/usr/bin/env bash" b
+#!/usr/bin/env bash
+$0
+endsnippet
+
 snippet #! "#!/usr/bin/env bash" b
 #!/usr/bin/env bash
 $0
@@ -16,6 +21,19 @@ endsnippet
 snippet sh "#!/usr/bin/env sh" b
 #!/usr/bin/env sh
 $0
+endsnippet
+
+snippet parse_args "parse args" b
+def parse_args():
+	parser = argparse.ArgumentParser(description="${1:parse args}")
+	parser.add_argument($2)
+	$0
+	args = parser.parse_args()
+	return args
+endsnippet
+
+snippet add_argument "add argument" b
+${1:parser}.add_argument("$2", $3)
 endsnippet
 
 snippet temp "Tempfile" b

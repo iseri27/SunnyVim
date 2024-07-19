@@ -1,4 +1,11 @@
 {
+	"suggest.noselect": true,
+    // "suggest.detailMaxLength": 30,
+    "suggest.defaultSortMethod": "length",
+    "suggest.labelMaxLength": 50,
+    "suggest.enablePreselect": false,
+    "suggest.detailField": "preview",
+
     "codeLens.enable": true,
 
     "coc.preferences.extensionUpdateCheck": "never",
@@ -124,26 +131,17 @@
 	"explorer.icon.expanded": "",
 	"explorer.icon.collapsed": "",
 
-	"languageserver": {
-		"clangd": {
-			"command": "clangd",
-			"rootPatterns": [
-				"compile_flags.txt",
-				"compile_commands.json"
-			],
-			"filetypes": [
-				"c",
-				"cc",
-				"cpp",
-				"c++",
-				"objc",
-				"objcpp"
-			]
-		},
-		"bash": {
-			"command": "bash-language-server",
-			"args": ["start"],
-			"filetypes": ["sh"]
-		}
-	}
+    "suggest.floatConfig": {
+        "border": true
+    },
+    "diagnostic.floatConfig": {
+        "border": true
+    },
+    "signature.floatConfig": {
+        "border": true
+    },
+    "hover.floatConfig": {
+        "border": true
+    },
+    "snippets.ultisnips.pythonPrompt": false
 }

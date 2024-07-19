@@ -27,6 +27,7 @@ let g:lightline.component_type = {
 " let g:lightline.tabline_subseparator = { 'left': "\ue0b1", 'right': "\ue0b3" }
 
 let g:lightline#bufferline#show_number = 2
+
 let g:lightline#bufferline#composed_number_map = {
 	\ '1'  : '(1)',
 	\ '2'  : '(2)',
