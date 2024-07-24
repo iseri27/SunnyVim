@@ -31,6 +31,19 @@ snippet "^#coding" "# encoding: UTF-8" r
 $0
 endsnippet
 
+snippet parse_args "parse args" b
+def parse_args():
+	parser = argparse.ArgumentParser(description="${1:parse args}")
+	parser.add_argument($2)
+	$0
+	args = parser.parse_args()
+	return args
+endsnippet
+
+snippet add_argument "add argument" b
+${1:parser}.add_argument("$2", $3)
+endsnippet
+
 snippet ifmain "ifmain" b
 if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
 	${VISUAL}$0
