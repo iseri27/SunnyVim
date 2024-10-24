@@ -48,13 +48,11 @@ let g:coc_global_extensions = [
 	\    'coc-translator',
 	\    'coc-pyright',
 	\    'coc-vimlsp',
-	\    'coc-fish',
 	\    'coc-explorer',
 	\    'coc-json',
 	\    'coc-sh',
 	\    'coc-explorer',
-	\    'coc-json',
-    \    'coc-clangd',
+	\    'coc-clangd',
 	\ ]
 
 " vim: nowrap
